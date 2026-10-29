@@ -1,48 +1,46 @@
-# Verification — 30 October 2026
+# Portfolio redesign QA — 30 October 2026
 
-## Content grounding
+## Scope and content
 
-Reviewed the original portfolio, current project READMEs, Agricultural Prices integration evidence, the existing BA resume, and the PPE assignment. Updated employment intent to BA / SA / Data Analyst, education year to 2026, and availability to November 2026 using the user's latest stated availability. No employer names or internship dates were invented.
+Rebuilt the site using the supplied Scroll Film design guidance while retaining the 17 previously reviewed project records, contact details and source-status disclosures. Updated education wording to the user's latest statement: graduated October 2026, official documents in progress, available November 2026. The PDF CV matches this status.
 
-Separated GoldSense (Thai gold / SQLite / Linear Regression) from Gold Trading Analytics (Airflow / PostgreSQL / experimental models). Updated Yuyenpensuk's description to its current Docker and persistent CMS storage documentation. Agricultural Prices' 398 records are explicitly tied to the October verification dataset, not a live count. PPE is a proposed take-home solution; flood analytics is in development without certified flood predictions or a hosted deployment.
+Created original procedural 3D artwork for the introductory scene. It is explicitly described as abstract artwork, not a project screenshot. Yuyenpensuk's featured visual is labeled as a website asset from its repository; Agricultural Prices uses its actual dashboard screenshot; PPE and MotoInsight show clearly labeled requirement/workflow summaries. No demonstration video is claimed for a project without original footage.
 
-## Browser layout checks
+## Responsive checks
 
-Chrome, with iframe viewport fixtures (not physical devices):
+Chrome using viewport iframe fixtures, not physical devices:
 
-| Viewport | Main page | PPE page | 17 project dialogs |
-| --- | --- | --- | --- |
-| 320 × 568 | Pass | Pass | Pass |
-| 360 × 800 | Pass | Pass | Pass |
-| 390 × 844 | Pass | Pass | Pass |
-| 430 × 932 | Pass | Pass | Pass |
-| 700 × 900 | Pass | Pass | Pass |
-| 768 × 1024 | Pass | Pass | Pass |
-| 1024 × 768 | Pass | Pass | Pass |
-| 1440 × 900 | Pass | Pass | Pass |
-| 1920 × 1080 | Pass | Pass | Pass |
+320×568, 360×800, 390×844, 430×932, 700×900, 768×1024, 1024×768, 1440×900, 1920×1080.
 
-Measured document/dialog scrollWidth against clientWidth; no horizontal overflow. Dialogs were opened through their shareable fragment routes: 17 × 9 = 153 dialog layout checks. Standard desktop scrollbar width reduces the available content width inside each fixture by 15px. Main and PPE pages add 18 page layout checks.
+- Main page and PPE document: 18 page/viewport checks.
+- 17 standalone HTML case studies: 153 page/viewport checks; each contains its expected heading.
+- 17 native project dialogs: 153 dialog/viewport checks.
+- No document/dialog horizontal overflow in these checks. Standard desktop scrollbars reduce the available fixture content width by 15 pixels.
+- Visually reviewed desktop hero, portrait hero, selected-work layout, source artwork and one-page PDF CV.
 
 ## Interaction checks
 
-- All six filters: All 17, BA 7, SA 11, Data 6, Application 2, Interactive 3. A project may belong to multiple categories.
-- Opening a project from the list, title rendering, closing, and fragment routing.
-- All 17 project dialogs render project-specific role, scope, tools, result, and limitation fields.
-- Agricultural gallery: all three actual repository images loaded with nonzero natural dimensions.
-- Thumbnail selection updates the displayed image/caption.
-- Nested image dialog opens above the project dialog; Escape closes the image first, then the project.
-- 320px mobile menu exposes all five navigation links and collapses after navigation.
-- PPE destination contains all seven sections; its return link opens the PPE project in the portfolio.
-- CV generated and visually reviewed as one A4 page; opened successfully in Chrome's PDF viewer. Automated download-event capture timed out in the cloud browser; it is not counted as a successful automated file-save check.
-- Local destination files exist; section fragment targets resolve; JavaScript syntax passes `node --check`.
-- The 13 unique linked GitHub repositories were retrieved through GitHub and their current README destinations inspected. Links are source/documentation links, not claims of deployed demos.
-- Email and telephone URIs match the published contact details; sending email or placing a call was not performed.
+- All six filters: All 17, BA 7, SA 11, Data Analyst 6, Application 2, Interactive 3. Multi-category membership is intentional.
+- Search for Airflow returns Agricultural Prices and Gold Trading Analytics; a nonmatching query returns a truthful empty state; clearing restores the list.
+- Project links progressively enhance to dialogs while updating their fragment routes; standalone page links and return-to-archive links work.
+- Gallery thumbnail/caption update, nested image modal, Escape to close the image then the project, and return of keyboard focus to the originating project link.
+- Mobile menu opens and closes with Escape, an outside click, and navigation. After layout settles at desktop width its state resets before returning to mobile.
+- Navigation active indicator corresponds to the selected-work section; reading progress is updated without a global per-frame CSS custom property.
+- Motion on: scroll reaches rendered hi frame 47, reverses to hi frame 2 near the hero; motion off: frame 0 remains displayed while scrolling.
+- No-JavaScript sandbox: all 17 static project links remain present, the portrait poster loads, and an appropriate explanatory message is visible. Every project has a standalone HTML destination.
+- Both featured remote images loaded with nonzero natural dimensions. The original Agricultural gallery images were verified in the preceding content revision and its gallery interaction was retested here.
+- Native PDF viewer opened the prior CV correctly; the updated one-page CV was re-rendered and visually reviewed locally. Automated cloud download-event capture was previously unreliable, so no successful automated save-to-disk claim is made.
+
+## Asset and static checks
+
+- 48 valid hi WebP frames and 16 valid lo frames per orientation; lo = ceil(hi / 3). All image files decode.
+- Approximate decoded hi-image footprint: landscape 161.1 MiB, portrait 91.4 MiB; this excludes canvas, low tier, browser, fonts and other page resources. It is a size estimate, not measured peak device memory.
+- All local links, image sources, scripts, stylesheets and section IDs are checked; project links map to real HTML pages.
+- JavaScript syntax checked with Node.
+- Theme text contrast checked against its dark and light section backgrounds.
 
 ## Limits
 
-This is Chrome viewport QA, not an exhaustive test of every browser, screen dimension, operating system, or physical device. Repository accessibility does not establish that each underlying application runs successfully; no such claim is made. Several older projects have descriptions but no verified public screenshots; their galleries are omitted instead of showing fabricated interfaces. Live counts, financial prediction performance, production server uptime, and hydrological accuracy were not re-certified as part of portfolio editing.
+No physical iPhone/Safari, Firefox or Edge test was performed. No measured first-frame latency, Core Web Vitals, exhaustive slow-network test, browser memory profile or simulated GPU context-loss test is claimed. The renderer includes poster, visibility and context-restoration handling, reviewed in source. Native scroll is used without a second smoothing layer. GitHub Pages controls response cache headers; versioned frame paths are used, but custom immutable headers cannot be imposed by these static files.
 
-## Source status follow-up
-
-Inspected repository trees and SOURCE_STATUS.md files. Several older repositories contain reconstructed examples rather than complete original archives. Added explicit project-level disclosures. MotoInsight’s original notebook is not in its repository; this is now stated. Hand Gesture and Clothesline link to the corresponding case-study repositories with the same source-status disclosure.
+Project repository links describe source/documentation, not public running demos. Operational uptime, underlying application runtimes, forecast performance and hydrological accuracy were not recertified during this visual redesign.

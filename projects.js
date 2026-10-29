@@ -1,0 +1,599 @@
+/* Generated from projects.json by tools/build_project_pages.py. */
+window.PORTFOLIO_PROJECTS=[
+  {
+    "id": "yuyenpensuk",
+    "title": "อยู่เย็นเป็นสุข วิศวกรรม",
+    "cats": [
+      "ba",
+      "sa"
+    ],
+    "kind": "งานส่งมอบให้บริษัท · 2026",
+    "desc": "เว็บไซต์บริษัทและระบบ CMS สำหรับจัดการสินค้า บริการ ข่าว และผลงาน",
+    "role": "ประสานงานกับเจ้าของบริษัท รวบรวมความต้องการ ออกแบบ Flow และพัฒนาเว็บไซต์พร้อมระบบจัดการเนื้อหา",
+    "features": [
+      "Admin Login",
+      "สินค้าและบริการ",
+      "ข่าวและผลงาน",
+      "อัปโหลดรูปภาพ",
+      "จัดเก็บข้อมูล CMS"
+    ],
+    "flow": [
+      "ความต้องการเจ้าของบริษัท",
+      "ออกแบบเว็บและ CMS",
+      "พัฒนา",
+      "ทดสอบและส่งมอบ"
+    ],
+    "tech": [
+      "Node.js",
+      "Express",
+      "JavaScript",
+      "Docker",
+      "Ubuntu"
+    ],
+    "result": "ส่งมอบเว็บไซต์ให้บริษัทใช้จริง พร้อมแนวทางติดตั้งด้วย Docker และเก็บข้อมูล/ไฟล์อัปโหลดภายนอก Container",
+    "limit": "เอกสารใน Repository อธิบายการติดตั้ง Production; สถานะเซิร์ฟเวอร์จริงอาจเปลี่ยนแปลง จึงเชื่อมไปที่โค้ดและเอกสารประกอบ",
+    "repo": "yuyenpensuk-website",
+    "images": []
+  },
+  {
+    "id": "agricultural",
+    "title": "Agricultural Prices Analytics",
+    "cats": [
+      "da",
+      "sa"
+    ],
+    "kind": "โครงงานรายวิชา · 2026",
+    "desc": "รวบรวมราคาสินค้าเกษตรจาก DIT, NABC และตลาดไท พร้อม Dashboard ที่อ่าน PostgreSQL โดยตรง",
+    "role": "ออกแบบการรวบรวมและตรวจสอบข้อมูล ปรับ Pipeline และ Dashboard ให้เปรียบเทียบราคาอย่างมีเงื่อนไข",
+    "features": [
+      "3 แหล่งข้อมูลจริง",
+      "Common Schema",
+      "UPSERT",
+      "แนวโน้มราคา",
+      "Pipeline Status"
+    ],
+    "flow": [
+      "DIT / NABC / ตลาดไท",
+      "ตรวจหน่วยและวันที่",
+      "ตัดซ้ำและ UPSERT",
+      "PostgreSQL",
+      "Streamlit Dashboard"
+    ],
+    "tech": [
+      "Python",
+      "Pandas",
+      "Airflow",
+      "PostgreSQL",
+      "Streamlit"
+    ],
+    "result": "README รุ่นวันที่ 23 ตุลาคม 2569 ระบุ 398 รายการหลังตัดซ้ำ และรักษาข้อมูลเดิม 354 รายการ",
+    "limit": "398 เป็นจำนวนในชุดตรวจสอบรุ่นดังกล่าว ไม่ใช่จำนวนสด; เปรียบเทียบเฉพาะหน่วย ประเภทการวัด และช่วงเวลาที่สอดคล้องกัน",
+    "repo": "02739452-26-6621655321",
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/02739452-26-6621655321/main/evidence/third_source/screenshots/dashboard.png",
+        "caption": "ภาพ Dashboard จากหลักฐานการทดสอบใน Repository"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/02739452-26-6621655321/main/evidence/third_source/screenshots/dashboard-table.png",
+        "caption": "ภาพตารางข้อมูลจากหลักฐานการทดสอบ"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/02739452-26-6621655321/main/evidence/third_source/screenshots/graph.png",
+        "caption": "ภาพกราฟจากหลักฐานการทดสอบ"
+      }
+    ]
+  },
+  {
+    "id": "ppe",
+    "title": "AI PPE Inspection — BA Case Study",
+    "cats": [
+      "ba",
+      "sa"
+    ],
+    "kind": "แบบทดสอบสมัครงาน · 2026",
+    "desc": "วิเคราะห์ระบบตรวจ PPE สี่ประเภท ณ ทางเข้าโรงงาน: Helmet, Mask, Vest และ Gloves",
+    "role": "วิเคราะห์โจทย์ กำหนดขอบเขต จัดคำถามเก็บความต้องการ ร่าง FR / NFR และ Acceptance Criteria",
+    "features": [
+      "24 คำถาม",
+      "Functional Requirements",
+      "Non-functional Requirements",
+      "Uncertain / Manual Review",
+      "UAT Scenarios"
+    ],
+    "flow": [
+      "เข้าเขตตรวจ",
+      "ประเมิน PPE",
+      "ครบ / ไม่ครบ / ไม่มั่นใจ",
+      "เจ้าหน้าที่ตรวจทาน",
+      "แจ้งเตือนและบันทึก"
+    ],
+    "tech": [
+      "Requirement Analysis",
+      "Process Flow",
+      "Acceptance Criteria",
+      "UAT Planning"
+    ],
+    "result": "จัดทำข้อเสนอระบบ ครอบคลุมขอบเขต ความเสี่ยง MVP และเงื่อนไขที่ต้องยืนยันกับลูกค้า",
+    "limit": "เป็น Proposed Solution สำหรับแบบทดสอบ ยังไม่ใช่ระบบ AI ที่พัฒนาและติดตั้งใช้งานจริง",
+    "repo": null,
+    "images": []
+  },
+  {
+    "id": "motoinsight",
+    "title": "MotoInsight — Data Analysis & ETL",
+    "cats": [
+      "da"
+    ],
+    "kind": "โครงงานรายวิชา",
+    "desc": "Notebook รวบรวมข้อมูลรถจักรยานยนต์จาก CheckRaka และอัตราแลกเปลี่ยนผ่าน REST API",
+    "role": "จัดเตรียมข้อมูลด้วย Web Scraping / API ทำความสะอาด แปลงข้อมูล และนำเสนอผ่านกราฟกับ Dashboard",
+    "features": [
+      "Web Scraping",
+      "REST API",
+      "Data Cleaning",
+      "CSV / XLSX Export",
+      "Gradio Dashboard"
+    ],
+    "flow": [
+      "Web / API",
+      "Transform",
+      "Export",
+      "Analysis",
+      "Gradio"
+    ],
+    "tech": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "BeautifulSoup",
+      "Matplotlib",
+      "Plotly",
+      "Gradio"
+    ],
+    "result": "มีสคริปต์ตัวอย่างที่สร้างใหม่ตาม Pipeline ที่บันทึกไว้ ครอบคลุมการดึงและทำความสะอาดข้อมูล",
+    "limit": "ผลวิเคราะห์ขึ้นกับข้อมูลที่รวบรวมใน Notebook ไม่ใช่ข้อมูลตลาดแบบสด · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด · Notebook ต้นฉบับยังไม่ได้อัปโหลดใน Repository",
+    "repo": "machine-learning-project",
+    "images": []
+  },
+  {
+    "id": "gold-thai",
+    "title": "GoldSense — Thai Gold 96.5%",
+    "cats": [
+      "da",
+      "sa"
+    ],
+    "kind": "โครงงานรายวิชา · 2026",
+    "desc": "เว็บแสดงราคาทองไทย ข้อมูลย้อนหลัง และ Linear Regression baseline",
+    "role": "ออกแบบการดึงข้อมูล การจัดเก็บ และการแสดงกราฟสำหรับติดตามราคา",
+    "features": [
+      "ราคาซื้อ / ขาย",
+      "SQLite",
+      "Historical Chart",
+      "Linear Regression",
+      "MAE / RMSE"
+    ],
+    "flow": [
+      "Thai Gold API",
+      "SQLite",
+      "ข้อมูลย้อนหลัง",
+      "Baseline Forecast",
+      "Dashboard"
+    ],
+    "tech": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "Chart.js"
+    ],
+    "result": "มีเอกสารอธิบายราคา กราฟย้อนหลัง และแนวทางประเมิน baseline",
+    "limit": "ข้อมูลย้อนหลังสะสมตั้งแต่เริ่มระบบ ต้องมีชุดข้อมูลเพียงพอก่อนประเมินโมเดล; ไม่ใช่คำแนะนำซื้อขาย",
+    "repo": "thai-gold-price-forecast",
+    "images": []
+  },
+  {
+    "id": "gold-trading",
+    "title": "Gold Trading Analytics",
+    "cats": [
+      "da",
+      "sa"
+    ],
+    "kind": "โครงการทดลองด้านข้อมูล · 2026",
+    "desc": "รวบรวมข้อมูลทองและตัวแปรตลาด เพื่อทดลองวิเคราะห์และเปรียบเทียบโมเดลกับ baseline",
+    "role": "ออกแบบแนวทาง Data Pipeline, Feature Engineering และการนำเสนอผลการทดลอง",
+    "features": [
+      "Airflow Pipeline",
+      "Market Variables",
+      "PostgreSQL",
+      "Model Comparison",
+      "Backtesting"
+    ],
+    "flow": [
+      "Market Sources",
+      "Airflow",
+      "Processing / PostgreSQL",
+      "ML / Backtesting",
+      "API / Dashboard"
+    ],
+    "tech": [
+      "Python",
+      "Airflow",
+      "PostgreSQL",
+      "scikit-learn",
+      "FastAPI"
+    ],
+    "result": "Repository สรุปสถาปัตยกรรมและผลทดลองเบื้องต้นของหลายโมเดล",
+    "limit": "ซอร์สโค้ดและไฟล์ประกอบยังอยู่ระหว่างอัปโหลดตาม README; โมเดลยังไม่ผ่านเกณฑ์ใช้ซื้อขายจริง",
+    "repo": "gold-trading",
+    "images": []
+  },
+  {
+    "id": "flood",
+    "title": "Thailand Flood Intelligence",
+    "cats": [
+      "da",
+      "sa"
+    ],
+    "kind": "โครงการระหว่างพัฒนา · 2026",
+    "desc": "แพลตฟอร์มวิจัยสถานการณ์น้ำ แยก Public Dashboard และ Research API พร้อมแหล่งที่มาของข้อมูล",
+    "role": "ออกแบบขอบเขตข้อมูล การแสดงผลบนแผนที่ และเงื่อนไขตรวจสอบข้อมูลก่อนนำเสนอ",
+    "features": [
+      "Map / GeoJSON",
+      "Historical Water Levels",
+      "Data Provenance",
+      "Research API",
+      "Readiness Status"
+    ],
+    "flow": [
+      "ข้อมูลที่มีสิทธิ์ใช้",
+      "ตรวจคุณภาพ",
+      "PostGIS",
+      "API",
+      "แผนที่ / Dashboard"
+    ],
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "MapLibre",
+      "FastAPI",
+      "PostGIS"
+    ],
+    "result": "รุ่น v0.6 มีเครื่องมือแผนที่ นำเข้าข้อมูลย้อนหลัง และเอกสารตรวจความพร้อม",
+    "limit": "ยังไม่มีผลจำลองน้ำท่วมที่ผ่านการรับรอง ไม่มีข้อมูลระดับน้ำสด และยังไม่มี Hosted Deployment",
+    "repo": "Thailand-Flood-Intelligence",
+    "images": []
+  },
+  {
+    "id": "system-design",
+    "title": "System Analysis & Design Coursework",
+    "cats": [
+      "ba",
+      "sa"
+    ],
+    "kind": "งานวิเคราะห์ระบบในรายวิชา · 2025",
+    "desc": "รวมการวิเคราะห์และออกแบบระบบผ่าน UML, DFD, ERD และแบบจำลองฐานข้อมูล",
+    "role": "แปลงโจทย์เป็นผู้ใช้งาน Use Case กระบวนการ และแบบจำลองข้อมูล",
+    "features": [
+      "Banking / Hospital UML",
+      "ATM / Toy Car UML",
+      "Use Case",
+      "DFD / ERD",
+      "Normalization 1NF–3NF"
+    ],
+    "flow": [
+      "โจทย์และผู้ใช้งาน",
+      "Requirements",
+      "Use Case / UML",
+      "Data Model",
+      "Documentation"
+    ],
+    "tech": [
+      "UML",
+      "DFD",
+      "ERD",
+      "Database Design"
+    ],
+    "result": "รวมตัวอย่างการวิเคราะห์ระบบหลายกรณีศึกษาใน Repository",
+    "limit": "เป็นชุดงานรายวิชา แต่ละกรณีศึกษามีขอบเขตต่างกัน ไม่ได้เป็นระบบ Production เดียวกัน · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "system-analysis-projects",
+    "images": []
+  },
+  {
+    "id": "booking",
+    "title": "ระบบจองที่พัก",
+    "cats": [
+      "ba",
+      "sa"
+    ],
+    "kind": "โครงงานเว็บแอปพลิเคชัน",
+    "desc": "ระบบค้นหาที่พัก เลือกวัน ตรวจห้องว่าง และยืนยันการจอง",
+    "role": "วิเคราะห์ขั้นตอนการจองและโครงสร้างข้อมูล พร้อมพัฒนาเว็บด้วย PHP / MySQL",
+    "features": [
+      "Search",
+      "Availability",
+      "Booking",
+      "Confirmation",
+      "Booking Status"
+    ],
+    "flow": [
+      "ค้นหาที่พัก",
+      "ดูรายละเอียด",
+      "เลือกวัน",
+      "ตรวจห้องว่าง",
+      "ยืนยันการจอง"
+    ],
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "MySQL"
+    ],
+    "result": "นำเสนอขั้นตอนการจองและความสัมพันธ์ของผู้ใช้ ที่พัก ห้อง และการจอง",
+    "limit": "สถานะการจองและการชำระเงินขึ้นกับขอบเขตโครงงาน ไม่อ้างว่าเชื่อมระบบชำระเงินจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "lodging-booking-system",
+    "images": []
+  },
+  {
+    "id": "adoption",
+    "title": "ระบบหาบ้านให้สัตว์",
+    "cats": [
+      "ba",
+      "sa"
+    ],
+    "kind": "กรณีศึกษาออกแบบระบบ",
+    "desc": "ออกแบบระบบเชื่อมต่อข้อมูลสัตว์กับผู้สนใจรับเลี้ยง",
+    "role": "วิเคราะห์ผู้ใช้และกระบวนการยื่นคำขอรับเลี้ยง",
+    "features": [
+      "Visitor",
+      "Adopter",
+      "Shelter",
+      "Admin"
+    ],
+    "flow": [
+      "ค้นหาสัตว์",
+      "ดูรายละเอียด",
+      "ยื่นคำขอ",
+      "ตรวจสอบ",
+      "อนุมัติ"
+    ],
+    "tech": [
+      "Requirements",
+      "Use Case",
+      "System Design"
+    ],
+    "result": "แสดงบทบาทผู้ใช้งานและลำดับการขอรับเลี้ยง",
+    "limit": "นำเสนอในฐานะกรณีศึกษาออกแบบระบบ ไม่อ้างว่ามีผู้ใช้งานจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "system-analysis-projects",
+    "images": []
+  },
+  {
+    "id": "vending",
+    "title": "ตู้จำหน่ายเครื่องดื่มอัตโนมัติ",
+    "cats": [
+      "ba",
+      "sa"
+    ],
+    "kind": "ระบบจำลองบนเว็บ",
+    "desc": "จำลองการเลือกสินค้า ตะกร้า การชำระผ่าน PromptPay และสะสมคะแนนซื้อ 10 ฟรี 1",
+    "role": "ออกแบบ User Journey, Business Rules และขั้นตอนธุรกรรม",
+    "features": [
+      "Product List",
+      "Cart",
+      "Order Summary",
+      "Payment Flow",
+      "Loyalty Rules"
+    ],
+    "flow": [
+      "เลือกสินค้า",
+      "ตะกร้า",
+      "สรุปคำสั่งซื้อ",
+      "Payment Status",
+      "สะสมคะแนน"
+    ],
+    "tech": [
+      "Node.js",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "result": "มีเอกสารอธิบายลำดับการซื้อและกติกาสะสมคะแนน",
+    "limit": "เป็นระบบจำลอง; Payment Flow ไม่ใช่หลักฐานว่ามีการยืนยันยอดจากธนาคารจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "energy-drink-vending-machine",
+    "images": []
+  },
+  {
+    "id": "gesture",
+    "title": "Hand Gesture Recognition",
+    "cats": [
+      "da"
+    ],
+    "kind": "โครงงาน Machine Learning · 2024",
+    "desc": "ทดลองจำแนกท่าทางมือจากภาพและกระบวนการประมวลผลภาพ",
+    "role": "ออกแบบ Workflow การเก็บภาพ ตรวจจับมือ และจำแนกท่าทาง",
+    "features": [
+      "Hand Detection",
+      "Landmarks",
+      "Classification",
+      "Image Processing"
+    ],
+    "flow": [
+      "ภาพ / กล้อง",
+      "ประมวลผลภาพ",
+      "ตรวจจับมือ",
+      "Features",
+      "จำแนกท่าทาง"
+    ],
+    "tech": [
+      "Python",
+      "OpenCV",
+      "NumPy",
+      "Machine Learning"
+    ],
+    "result": "แสดงกระบวนการทดลองรู้จำท่าทางมือ",
+    "limit": "ขอบเขตจำกัดตามชุดท่าทางที่ใช้ศึกษา ไม่อ้างว่ารองรับภาษามือทั้งหมดหรือมีค่าความแม่นยำที่ยืนยันแล้ว · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "machine-learning-project",
+    "images": []
+  },
+  {
+    "id": "social",
+    "title": "Flutter Social Media App",
+    "cats": [
+      "app"
+    ],
+    "kind": "โครงงานแอปพลิเคชัน",
+    "desc": "แอป Social Media แบบ X-style มี Feed, Profile, Post, Like และ Comment",
+    "role": "พัฒนา Flow การใช้งานและเชื่อมข้อมูลกับ Firebase",
+    "features": [
+      "Authentication",
+      "Public Feed",
+      "Profile",
+      "Post / Like / Comment",
+      "Audio"
+    ],
+    "flow": [
+      "Login",
+      "Feed",
+      "Post",
+      "Interaction",
+      "Profile"
+    ],
+    "tech": [
+      "Flutter",
+      "Dart",
+      "Firebase Auth",
+      "Firestore",
+      "Firebase Storage"
+    ],
+    "result": "Repository อธิบายฟังก์ชันบัญชีผู้ใช้ เนื้อหา และการจัดเก็บข้อมูล",
+    "limit": "เป็นโครงงานแอป ไม่อ้างจำนวนผู้ใช้งานหรือการเปิดบริการจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "flutter-social-app",
+    "images": []
+  },
+  {
+    "id": "clothesline",
+    "title": "ราวตากผ้าอัตโนมัติ",
+    "cats": [
+      "app",
+      "sa"
+    ],
+    "kind": "โครงงาน IoT · 2024",
+    "desc": "เชื่อมเซนเซอร์ความชื้น/ฝนกับไมโครคอนโทรลเลอร์และแอปติดตาม",
+    "role": "ออกแบบลำดับการอ่านเซนเซอร์ สั่งมอเตอร์ และควบคุมผ่านแอป",
+    "features": [
+      "Rain / Moisture Sensor",
+      "Microcontroller",
+      "Motor",
+      "Mobile Control"
+    ],
+    "flow": [
+      "Sensor",
+      "Detection",
+      "Controller",
+      "Decision",
+      "Motor"
+    ],
+    "tech": [
+      "IoT",
+      "Microcontroller",
+      "Mobile Application"
+    ],
+    "result": "นำเสนอการเชื่อมต่อข้อมูลเซนเซอร์กับคำสั่งควบคุม",
+    "limit": "ขอบเขตเป็นต้นแบบตามโครงงาน ไม่ระบุรุ่นฮาร์ดแวร์หรือผลทดสอบที่ไม่มีหลักฐาน · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "system-analysis-projects",
+    "images": []
+  },
+  {
+    "id": "open-house",
+    "title": "Open House: Sun of Prosperity",
+    "cats": [
+      "ba",
+      "ux"
+    ],
+    "kind": "งานออกแบบแผนกิจกรรม",
+    "desc": "ออกแบบ Visitor Flow การจัดสรรเจ้าหน้าที่ และแผนรองรับเหตุการณ์",
+    "role": "วาง Theme กระบวนการเข้าชม และ Scenario ฝนตก / No-show",
+    "features": [
+      "10 Houses ในแผน",
+      "20 Staff ในแผน",
+      "Floors 12 / 14",
+      "Elevator Flow",
+      "Scenario Planning"
+    ],
+    "flow": [
+      "Visitor Journey",
+      "Houses",
+      "Staff Allocation",
+      "Floor / Elevator",
+      "Scenarios"
+    ],
+    "tech": [
+      "Process Design",
+      "Resource Planning",
+      "Scenario Planning"
+    ],
+    "result": "มีแนวคิดและข้อกำหนดแผนกิจกรรมใน Repository",
+    "limit": "ตัวเลขเป็นองค์ประกอบของแผน ไม่ใช่สถิติผู้เข้าร่วมกิจกรรมจริง",
+    "repo": "sun-of-prosperity-open-house",
+    "images": []
+  },
+  {
+    "id": "tarot",
+    "title": "Interactive 3D Tarot",
+    "cats": [
+      "ux"
+    ],
+    "kind": "โครงงานเว็บ Interactive",
+    "desc": "ประสบการณ์ดูไพ่ 3D พร้อมเลือกไพ่ เปลี่ยนหน้า และ Zoom",
+    "role": "ออกแบบ Page Flow และ Interaction ของเว็บ",
+    "features": [
+      "Profile / Reading",
+      "Card Selection",
+      "Zoom",
+      "3D Models"
+    ],
+    "flow": [
+      "Tarot",
+      "Profile",
+      "Reading",
+      "Card Selection"
+    ],
+    "tech": [
+      "Three.js",
+      "JavaScript",
+      "GLB"
+    ],
+    "result": "นำเสนอการออกแบบ Navigation และประสบการณ์โต้ตอบกับโมเดล",
+    "limit": "ลิงก์ไปเอกสารโครงการ ไม่ใช่เว็บทดลองที่เผยแพร่; โมเดล 3D ไม่ได้ระบุว่าเป็นผลงานสร้างเอง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "tarot-3d-interactive",
+    "images": []
+  },
+  {
+    "id": "space",
+    "title": "Space Explorer 3D",
+    "cats": [
+      "ux"
+    ],
+    "kind": "โครงงานเว็บ Interactive",
+    "desc": "นำเสนอดวงอาทิตย์ ดาวศุกร์ โลก และดาวเสาร์ในรูปแบบ 3D",
+    "role": "แปลงข้อกำหนดด้านภาพและการหมุนของวัตถุเป็น Interactive Presentation",
+    "features": [
+      "3D Objects",
+      "Self Rotation",
+      "Interactive Presentation"
+    ],
+    "flow": [
+      "เลือกมุมมอง",
+      "ดูโมเดล 3D",
+      "สังเกตการหมุนของวัตถุ"
+    ],
+    "tech": [
+      "Three.js",
+      "JavaScript"
+    ],
+    "result": "แสดงโมเดลวัตถุและการหมุนรอบตัวเองตามขอบเขตงาน",
+    "limit": "เป็นงานนำเสนอภาพ 3D ไม่ใช่แบบจำลองวงโคจรหรือการคำนวณดาราศาสตร์ · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "repo": "space-explorer-3d",
+    "images": []
+  }
+];

@@ -1,0 +1,15 @@
+{
+  "frames": 48,
+  "step": 3,
+  "authorship": "Original procedural 3D artwork",
+  "sets": {
+    "landscape": [
+      1100,
+      800
+    ],
+    "portrait": [
+      640,
+      780
+    ]
+  }
+}
