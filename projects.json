@@ -299,39 +299,51 @@
   },
   {
     "id": "booking",
-    "title": "ระบบจองที่พัก",
+    "title": "STILL — Lodging Booking",
     "cats": [
       "ba",
       "sa"
     ],
-    "kind": "โครงงานเว็บแอปพลิเคชัน",
-    "desc": "ระบบค้นหาที่พัก เลือกวัน ตรวจห้องว่าง และยืนยันการจอง",
-    "role": "วิเคราะห์ขั้นตอนการจองและโครงสร้างข้อมูล พร้อมพัฒนาเว็บด้วย PHP / MySQL",
+    "kind": "พัฒนาใหม่และทดสอบจริง · 30 ต.ค. 2026",
+    "desc": "เว็บค้นหาห้องว่างและจองที่พัก พร้อมป้องกันจองซ้อนและประวัติการจองใน SQLite",
+    "role": "กำหนด Booking Flow และกติกาวันเข้าพัก พร้อมพัฒนาโดยใช้ AI assistance ใน ChatGPT Work และตรวจการจอง/ยกเลิกจริง",
     "features": [
-      "Search",
-      "Availability",
-      "Booking",
-      "Confirmation",
-      "Booking Status"
+      "Date / Guest Search",
+      "Room Type Filter",
+      "Atomic Overlap Protection",
+      "Booking History",
+      "Cancellation"
     ],
     "flow": [
-      "ค้นหาที่พัก",
-      "ดูรายละเอียด",
-      "เลือกวัน",
-      "ตรวจห้องว่าง",
-      "ยืนยันการจอง"
+      "เลือกวันและจำนวนคน",
+      "ตรวจห้องว่างจาก SQLite",
+      "ตรวจราคา",
+      "ยืนยันการจอง",
+      "ประวัติ / ยกเลิก"
     ],
     "tech": [
-      "HTML",
-      "CSS",
+      "Node.js 24",
+      "SQLite",
       "JavaScript",
-      "PHP",
-      "MySQL"
+      "HTML / CSS"
     ],
-    "result": "นำเสนอขั้นตอนการจองและความสัมพันธ์ของผู้ใช้ ที่พัก ห้อง และการจอง",
-    "limit": "สถานะการจองและการชำระเงินขึ้นกับขอบเขตโครงงาน ไม่อ้างว่าเชื่อมระบบชำระเงินจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "result": "พัฒนารุ่น v2 ที่รันได้จริง ผ่าน API tests 4 ชุด และทดสอบจอง Garden Studio 2 คืน รวม 2,400 บาท ตรวจสถานะหลังโหลดใหม่ และยกเลิกคืนห้องว่าง",
+    "limit": "รุ่นพัฒนาใหม่ใช้ Node.js + SQLite; ตัวอย่าง PHP เดิมเก็บใน legacy/ ไม่อ้างว่าเป็นระบบ PHP/MySQL สมบูรณ์ ที่พัก/ราคาเป็นข้อมูลทดสอบ ไม่มีโรงแรมจริงหรือการชำระเงิน และยังไม่เปิด Production",
     "repo": "lodging-booking-system",
-    "images": []
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/01-search.jpg",
+        "caption": "ภาพจากระบบค้นหาห้องว่างจริง · ห้องและภาพประกอบเป็นข้อมูลทดสอบ"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/02-confirmed.jpg",
+        "caption": "ผลจองที่บันทึกใน SQLite จริง · ไม่มีการจองโรงแรมภายนอก"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/03-persisted-booking.jpg",
+        "caption": "หลังโหลดใหม่ ห้องที่จองไม่ว่าง และประวัติการจองยังอยู่"
+      }
+    ]
   },
   {
     "id": "adoption",
@@ -368,38 +380,51 @@
   },
   {
     "id": "vending",
-    "title": "ตู้จำหน่ายเครื่องดื่มอัตโนมัติ",
+    "title": "VOLT — Drink Station",
     "cats": [
       "ba",
       "sa"
     ],
-    "kind": "ระบบจำลองบนเว็บ",
-    "desc": "จำลองการเลือกสินค้า ตะกร้า การชำระผ่าน PromptPay และสะสมคะแนนซื้อ 10 ฟรี 1",
-    "role": "ออกแบบ User Journey, Business Rules และขั้นตอนธุรกรรม",
+    "kind": "พัฒนาใหม่และทดสอบจริง · 30 ต.ค. 2026",
+    "desc": "เว็บสั่งเครื่องดื่ม พร้อมตะกร้า สต็อก คำสั่งซื้อ และสะสมคะแนนใน SQLite",
+    "role": "กำหนดขอบเขตและ Business Rules พร้อมพัฒนาโดยใช้ AI assistance ใน ChatGPT Work และตรวจผลการทำงานจริง",
     "features": [
-      "Product List",
-      "Cart",
-      "Order Summary",
-      "Payment Flow",
-      "Loyalty Rules"
+      "SQLite Persistence",
+      "Server-side Totals",
+      "Stock Reservation / Cancellation",
+      "Test Payment",
+      "10 Purchases → 1 Reward"
     ],
     "flow": [
       "เลือกสินค้า",
-      "ตะกร้า",
-      "สรุปคำสั่งซื้อ",
-      "Payment Status",
-      "สะสมคะแนน"
+      "ตรวจยอดจากเซิร์ฟเวอร์",
+      "กันสต็อก",
+      "ยืนยันชำระทดลอง",
+      "บันทึกคะแนน / ประวัติ"
     ],
     "tech": [
-      "Node.js",
+      "Node.js 24",
+      "SQLite",
       "JavaScript",
-      "HTML",
-      "CSS"
+      "HTML / CSS"
     ],
-    "result": "มีเอกสารอธิบายลำดับการซื้อและกติกาสะสมคะแนน",
-    "limit": "เป็นระบบจำลอง; Payment Flow ไม่ใช่หลักฐานว่ามีการยืนยันยอดจากธนาคารจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "result": "พัฒนารุ่น v2 ที่รันได้จริง ผ่าน API tests 4 ชุด และทดสอบเพิ่มสินค้า ชำระทดลอง โหลดใหม่ตรวจสต็อก/คะแนนใน Chrome",
+    "limit": "เป็นผลงานพัฒนาใหม่ ไม่ใช่ไฟล์ต้นฉบับรายวิชา; สินค้าและรายการซื้อเป็นข้อมูลทดสอบ ไม่มี PromptPay หรือธนาคารจริง ไม่มีเครื่องจำหน่ายและยังไม่เปิด Production",
     "repo": "energy-drink-vending-machine",
-    "images": []
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/01-storefront.jpg",
+        "caption": "ภาพหน้าร้านจากระบบ v2 ที่รันจริง · ภาพกระป๋องเป็น CSS illustration"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/02-order-review.jpg",
+        "caption": "คำสั่งซื้อจากฐานข้อมูลจริง: Citrus + Berry รวม 55 บาท · โหมดทดสอบ"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/03-paid.jpg",
+        "caption": "ผลยืนยันชำระทดลองสำเร็จจากการทดสอบผ่าน Chrome"
+      }
+    ]
   },
   {
     "id": "gesture",
