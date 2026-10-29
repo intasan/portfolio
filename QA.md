@@ -42,3 +42,7 @@ Measured document/dialog scrollWidth against clientWidth; no horizontal overflow
 ## Limits
 
 This is Chrome viewport QA, not an exhaustive test of every browser, screen dimension, operating system, or physical device. Repository accessibility does not establish that each underlying application runs successfully; no such claim is made. Several older projects have descriptions but no verified public screenshots; their galleries are omitted instead of showing fabricated interfaces. Live counts, financial prediction performance, production server uptime, and hydrological accuracy were not re-certified as part of portfolio editing.
+
+## Source status follow-up
+
+Inspected repository trees and SOURCE_STATUS.md files. Several older repositories contain reconstructed examples rather than complete original archives. Added explicit project-level disclosures. MotoInsight’s original notebook is not in its repository; this is now stated. Hand Gesture and Clothesline link to the corresponding case-study repositories with the same source-status disclosure.
