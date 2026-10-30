@@ -2,7 +2,7 @@
 
 ## Scope and content
 
-Rebuilt the site using the supplied Scroll Film design guidance while retaining the 17 previously reviewed project records, contact details and source-status disclosures. Updated education wording to the user's latest statement: graduated October 2026, official documents in progress, available November 2026. The PDF CV matches this status.
+Rebuilt the site using the supplied Scroll Film design guidance while retaining the 17 previously reviewed project records, contact details and source-status disclosures. After factual review, graduation status is explicitly awaiting official confirmation, with November 2026 availability listed as intended. The former CV PDF was removed and replaced with an online summary.
 
 Created original procedural 3D artwork for the introductory scene. It is explicitly described as abstract artwork, not a project screenshot. Yuyenpensuk's featured visual is labeled as a website asset from its repository; Agricultural Prices uses its actual dashboard screenshot; PPE and MotoInsight show clearly labeled requirement/workflow summaries. No demonstration video is claimed for a project without original footage.
 
@@ -16,7 +16,7 @@ Chrome using viewport iframe fixtures, not physical devices:
 - 17 standalone HTML case studies: 153 page/viewport checks; each contains its expected heading.
 - 17 native project dialogs: 153 dialog/viewport checks.
 - No document/dialog horizontal overflow in these checks. Standard desktop scrollbars reduce the available fixture content width by 15 pixels.
-- Visually reviewed desktop hero, portrait hero, selected-work layout, source artwork and one-page PDF CV.
+- Visually reviewed desktop hero, portrait hero, selected-work layout, source artwork and the updated online CV source.
 
 ## Interaction checks
 
@@ -29,7 +29,7 @@ Chrome using viewport iframe fixtures, not physical devices:
 - Motion on: scroll reaches rendered hi frame 47, reverses to hi frame 2 near the hero; motion off: frame 0 remains displayed while scrolling.
 - No-JavaScript sandbox: all 17 static project links remain present, the portrait poster loads, and an appropriate explanatory message is visible. Every project has a standalone HTML destination.
 - Both featured remote images loaded with nonzero natural dimensions. The original Agricultural gallery images were verified in the preceding content revision and its gallery interaction was retested here.
-- Native PDF viewer opened the prior CV correctly; the updated one-page CV was re-rendered and visually reviewed locally. Automated cloud download-event capture was previously unreliable, so no successful automated save-to-disk claim is made.
+- The previous CV PDF was removed due to unsupported internship content. The replacement online CV was reviewed in source but has not been revalidated in every browser or printed to PDF.
 
 ## Asset and static checks
 
