@@ -1,0 +1,7 @@
+Actual Portfolio browser checks against this update:
+Loaded main page and observed 17 project entries.
+Opened GoldSense dialog from selected work: correct requirement/features/status visible.
+Verified actual dashboard screenshot loaded from published repository.
+Switched gallery to SQL/API log capture: selected state and caption changed correctly.
+No current full responsive sweep claimed. No physical mobile device check.
+See portfolio-evidence-detail.jpg.

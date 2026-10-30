@@ -29,8 +29,8 @@
       "Docker",
       "Ubuntu"
     ],
-    "result": "พัฒนาเว็บไซต์และ CMS พร้อมคู่มือการติดตั้ง; การนำขึ้นใช้งานและสถานะเซิร์ฟเวอร์ต้องยืนยันจากเจ้าของระบบ",
-    "limit": "มี source และคู่มือติดตั้ง แต่ไม่ใช้ README เป็นหลักฐานยืนยันว่าบริการ Production เปิดใช้งานอยู่",
+    "result": "ทดสอบ security policy ผ่าน; CMS ยังไม่ตรวจรับ",
+    "limit": "2 automated tests ผ่าน แต่ startup แบบ REQUIRE_EXISTING_DATA=1 หยุดเพราะไม่มีฐานข้อมูล CMS จริง; ไม่มี product JPG uploads จริงครบ และยังไม่ได้ทดสอบ admin flow",
     "repo": "yuyenpensuk-website",
     "images": [],
     "analysis": {
@@ -155,8 +155,8 @@
       "Plotly",
       "Gradio"
     ],
-    "result": "มีเอกสารและสคริปต์ที่สร้างขึ้นใหม่ตามโครงงานที่อธิบายไว้",
-    "limit": "Notebook ต้นฉบับไม่ได้อัปโหลดบน GitHub ณ วันที่ตรวจ; code ที่สร้างใหม่เป็น reconstructed example ไม่ใช่หลักฐานต้นฉบับหรือผลทดสอบย้อนหลัง",
+    "result": "ยังประมวลผลไม่ได้",
+    "limit": "รัน data_cleaning.py แล้วไม่พบ data/input.csv; gesture pipeline ขาด cv2 และไม่มี dataset ที่แนบใน Repository",
     "repo": "machine-learning-project",
     "images": []
   },
@@ -168,37 +168,38 @@
       "sa"
     ],
     "kind": "โครงงานรายวิชา · 2026",
-    "desc": "เว็บแสดงราคาทองไทย ข้อมูลย้อนหลัง และ Linear Regression baseline",
+    "desc": "Dashboard รวบรวมราคาทองจาก API จริงและ SQLite; ยังไม่มีการประเมินโมเดลพยากรณ์",
     "role": "ออกแบบการดึงข้อมูล การจัดเก็บ และการแสดงกราฟสำหรับติดตามราคา",
     "features": [
-      "ราคาซื้อ / ขาย",
-      "SQLite",
-      "Historical Chart",
-      "Linear Regression",
-      "MAE / RMSE"
+      "ดึงข้อมูลราคาจริง",
+      "SQLite ไม่เพิ่ม publication ซ้ำ",
+      "สถานะข้อมูลเก่า/ไม่มีข้อมูล",
+      "ยังไม่แสดงผลพยากรณ์"
     ],
     "flow": [
       "Thai Gold API",
+      "ตรวจราคาและเวลาเผยแพร่",
       "SQLite",
-      "ข้อมูลย้อนหลัง",
-      "Baseline Forecast",
       "Dashboard"
     ],
     "tech": [
-      "Node.js",
-      "Express",
+      "Node.js 24",
       "SQLite",
-      "Chart.js"
+      "JavaScript"
     ],
-    "result": "มี source สำหรับแสดงและสะสมข้อมูลราคาทองคำกับ baseline ที่ระบุใน README",
-    "limit": "ไม่อ้างความแม่นยำของโมเดลหรือประวัติราคาครบ 1 ปีโดยไม่มี dataset และการประเมินรองรับ",
+    "result": "รันรวบรวมข้อมูลจริงได้; ยังไม่มี forecast",
+    "limit": "รัน HTTP API, query SQLite และจับภาพ Dashboard จริงได้; มีราคาจริง 1 publication; ไม่แสดง forecast/MAE/RMSE เพราะยังไม่มี chronological holdout",
     "repo": "thai-gold-price-forecast",
-    "images": [],
-    "analysis": {
-      "href": "analysis/gold-thai/index.html",
-      "diagram": "analysis/gold-thai/diagrams/data-flow.svg",
-      "label": "Requirement · DFD · Data Model · Workflow · UAT"
-    }
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/dashboard-actual.jpg",
+        "caption": "Dashboard กับราคาจริง 1 publication; ยังไม่มี forecast"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/database-api-log-view.jpg",
+        "caption": "ภาพ viewer ของ log HTTP และ SQL ที่รันจริง ไม่ใช่หน้าจอโปรแกรมจัดการ DB"
+      }
+    ]
   },
   {
     "id": "gold-trading",
@@ -208,31 +209,21 @@
       "sa"
     ],
     "kind": "โครงการทดลองด้านข้อมูล · 2026",
-    "desc": "รวบรวมข้อมูลทองและตัวแปรตลาด เพื่อทดลองวิเคราะห์และเปรียบเทียบโมเดลกับ baseline",
+    "desc": "เอกสารแนวคิดระบบวิเคราะห์ทองคำ ยังไม่มี ETL / API / โมเดลที่รันได้ใน Repository",
     "role": "ออกแบบแนวทาง Data Pipeline, Feature Engineering และการนำเสนอผลการทดลอง",
     "features": [
-      "Airflow Pipeline",
-      "Market Variables",
-      "PostgreSQL",
-      "Model Comparison",
-      "Backtesting"
+      "เอกสารแนวคิดและหน้าแนะนำเท่านั้น"
     ],
     "flow": [
-      "Market Sources",
-      "Airflow",
-      "Processing / PostgreSQL",
-      "ML / Backtesting",
-      "API / Dashboard"
+      "เอกสารแนวคิด",
+      "รอ source และข้อมูลจริง"
     ],
     "tech": [
-      "Python",
-      "Airflow",
-      "PostgreSQL",
-      "scikit-learn",
-      "FastAPI"
+      "HTML",
+      "Markdown"
     ],
-    "result": "จัดทำแนวทางสถาปัตยกรรม Data Pipeline และสรุปการทดลองใน README",
-    "limit": "Source code และผลรันทดสอบใน GitHub ยังไม่ครบ จึงไม่อ้างว่าผู้ชมสามารถทำซ้ำ Pipeline หรือยืนยันตัวเลขผลทดลองจาก Repository นี้ได้",
+    "result": "ยังไม่มีระบบที่รันได้",
+    "limit": "Repository มีเพียง README และ index.html; ไม่มี Airflow DAG, API, Compose, model หรือข้อมูลจริงสำหรับยืนยันตัวเลขเดิม",
     "repo": "gold-trading",
     "images": []
   },
@@ -267,10 +258,19 @@
       "FastAPI",
       "PostGIS"
     ],
-    "result": "รุ่น v0.6 มีเครื่องมือแผนที่ นำเข้าข้อมูลย้อนหลัง และเอกสารตรวจความพร้อม",
-    "limit": "ยังไม่มีผลจำลองน้ำท่วมที่ผ่านการรับรอง ไม่มีข้อมูลระดับน้ำสด และยังไม่มี Hosted Deployment",
+    "result": "โค้ดทดสอบผ่าน; ข้อมูลและแบบจำลองยังไม่พร้อม",
+    "limit": "Backend 259 passed, 5 skipped; Frontend 20 passed และ build/typecheck ผ่าน; actual API ให้ readiness 503 เพราะ PostGIS ไม่พร้อม; ไม่มีผลเสี่ยงรายที่ดินที่ผ่าน validation; UI readiness แสดงตรวจสอบไม่ได้ เพราะ preview Python ไม่มี uvicorn",
     "repo": "Thailand-Flood-Intelligence",
-    "images": [],
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/Thailand-Flood-Intelligence/main/evidence/readiness-actual.jpg",
+        "caption": "หน้า readiness จริง: ตรวจสอบสถานะไม่ได้"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/Thailand-Flood-Intelligence/main/evidence/test-log-view.jpg",
+        "caption": "ภาพ viewer ของ stdout pytest ที่รันจริง; ไม่ใช่หลักฐานแบบจำลองพร้อมใช้"
+      }
+    ],
     "analysis": {
       "href": "analysis/flood/index.html",
       "diagram": "analysis/flood/diagrams/data-flow.svg",
@@ -307,8 +307,8 @@
       "ERD",
       "Database Design"
     ],
-    "result": "Repository รวมเอกสารที่มีและตัวอย่างที่สร้างขึ้นใหม่จากโจทย์",
-    "limit": "ต้องดูแหล่งที่มาของไฟล์แต่ละชิ้น บางส่วนเป็น reconstructed examples ไม่ใช่ผลงานต้นฉบับทั้งหมด",
+    "result": "ตรวจได้เฉพาะ source และ schema",
+    "limit": "มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้",
     "repo": "system-analysis-projects",
     "images": []
   },
@@ -319,7 +319,7 @@
       "ba",
       "sa"
     ],
-    "kind": "เว็บต้นแบบสร้างใหม่และทดสอบด้วยข้อมูลจำลอง · 2026",
+    "kind": "เว็บต้นแบบ Node.js + SQLite · ยังไม่มีข้อมูลธุรกิจจริง",
     "desc": "เว็บค้นหาห้องว่างและจองที่พัก พร้อมป้องกันจองซ้อนและประวัติการจองใน SQLite",
     "role": "กำหนด Booking Flow และกติกาวันเข้าพัก พร้อมพัฒนาโดยใช้ AI assistance ใน ChatGPT Work และตรวจการจอง/ยกเลิกจริง",
     "features": [
@@ -342,28 +342,15 @@
       "JavaScript",
       "HTML / CSS"
     ],
-    "result": "พัฒนารุ่น v2 ที่รันได้จริง ผ่าน API tests 4 ชุด และทดสอบจอง Garden Studio 2 คืน รวม 2,400 บาท ตรวจสถานะหลังโหลดใหม่ และยกเลิกคืนห้องว่าง",
-    "limit": "รุ่นพัฒนาใหม่ใช้ Node.js + SQLite; ตัวอย่าง PHP เดิมเก็บใน legacy/ ไม่อ้างว่าเป็นระบบ PHP/MySQL สมบูรณ์ ที่พัก/ราคาเป็นข้อมูลทดสอบ ไม่มีโรงแรมจริงหรือการชำระเงิน และยังไม่เปิด Production",
+    "result": "ทดสอบ logic ผ่าน; ข้อมูลธุรกิจยังไม่มี",
+    "limit": "4 unit tests ผ่านด้วย fixture ในหน่วยความจำเท่านั้น; runtime ใหม่ไม่สร้าง sample rooms; ไม่มีข้อมูลห้องจริงหรือการเชื่อมผู้ประกอบการ",
     "repo": "lodging-booking-system",
     "images": [
       {
-        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/01-search.jpg",
-        "caption": "ภาพจากระบบค้นหาห้องว่างจริง · ห้องและภาพประกอบเป็นข้อมูลทดสอบ"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/02-confirmed.jpg",
-        "caption": "ผลจองที่บันทึกใน SQLite จริง · ไม่มีการจองโรงแรมภายนอก"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/03-persisted-booking.jpg",
-        "caption": "หลังโหลดใหม่ ห้องที่จองไม่ว่าง และประวัติการจองยังอยู่"
+        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/empty-real-data-actual.jpg",
+        "caption": "Runtime จริงไม่เติม sample rooms; ยังไม่มีข้อมูลห้องจริง"
       }
-    ],
-    "analysis": {
-      "href": "analysis/booking/index.html",
-      "diagram": "analysis/booking/diagrams/data-flow.svg",
-      "label": "Requirement · DFD · Data Model · Workflow · UAT"
-    }
+    ]
   },
   {
     "id": "adoption",
@@ -393,8 +380,8 @@
       "Use Case",
       "System Design"
     ],
-    "result": "แสดงบทบาทผู้ใช้งานและลำดับการขอรับเลี้ยง",
-    "limit": "นำเสนอในฐานะกรณีศึกษาออกแบบระบบ ไม่อ้างว่ามีผู้ใช้งานจริง · โค้ดใน Repository บางส่วนเป็นตัวอย่างที่สร้างใหม่ตามขอบเขตเดิม ไม่ใช่สำเนาไฟล์ต้นฉบับทั้งหมด",
+    "result": "ตรวจได้เฉพาะ source และ schema",
+    "limit": "มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้",
     "repo": "system-analysis-projects",
     "images": []
   },
@@ -405,7 +392,7 @@
       "ba",
       "sa"
     ],
-    "kind": "เว็บต้นแบบสร้างใหม่และทดสอบด้วยข้อมูลจำลอง · 2026",
+    "kind": "เว็บต้นแบบ Node.js + SQLite · ยังไม่มีข้อมูลธุรกิจจริง",
     "desc": "เว็บสั่งเครื่องดื่ม พร้อมตะกร้า สต็อก คำสั่งซื้อ และสะสมคะแนนใน SQLite",
     "role": "กำหนดขอบเขตและ Business Rules พร้อมพัฒนาโดยใช้ AI assistance ใน ChatGPT Work และตรวจผลการทำงานจริง",
     "features": [
@@ -428,28 +415,15 @@
       "JavaScript",
       "HTML / CSS"
     ],
-    "result": "พัฒนารุ่น v2 ที่รันได้จริง ผ่าน API tests 4 ชุด และทดสอบเพิ่มสินค้า ชำระทดลอง โหลดใหม่ตรวจสต็อก/คะแนนใน Chrome",
-    "limit": "เป็นผลงานพัฒนาใหม่ ไม่ใช่ไฟล์ต้นฉบับรายวิชา; สินค้าและรายการซื้อเป็นข้อมูลทดสอบ ไม่มี PromptPay หรือธนาคารจริง ไม่มีเครื่องจำหน่ายและยังไม่เปิด Production",
+    "result": "ทดสอบ logic ผ่าน; ข้อมูลธุรกิจยังไม่มี",
+    "limit": "4 unit tests ผ่านด้วย fixture ในหน่วยความจำเท่านั้น; runtime ใหม่ไม่สร้าง sample catalog; ไม่มี integration ชำระเงินจริง/เครื่องจ่ายจริง",
     "repo": "energy-drink-vending-machine",
     "images": [
       {
-        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/01-storefront.jpg",
-        "caption": "ภาพหน้าร้านจากระบบ v2 ที่รันจริง · ภาพกระป๋องเป็น CSS illustration"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/02-order-review.jpg",
-        "caption": "คำสั่งซื้อจากฐานข้อมูลจริง: Citrus + Berry รวม 55 บาท · โหมดทดสอบ"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/03-paid.jpg",
-        "caption": "ผลยืนยันชำระทดลองสำเร็จจากการทดสอบผ่าน Chrome"
+        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/empty-real-data-actual.jpg",
+        "caption": "Runtime จริงไม่เติม sample catalog; ยังไม่มีข้อมูลสินค้าจริง"
       }
-    ],
-    "analysis": {
-      "href": "analysis/vending/index.html",
-      "diagram": "analysis/vending/diagrams/data-flow.svg",
-      "label": "Requirement · DFD · Data Model · Workflow · UAT"
-    }
+    ]
   },
   {
     "id": "gesture",
@@ -479,8 +453,8 @@
       "NumPy",
       "Machine Learning"
     ],
-    "result": "มีคำอธิบายการทดลองรู้จำท่าทางและตัวอย่างโค้ดสร้างใหม่",
-    "limit": "ไม่ยืนยันผลความแม่นยำ การฝึกโมเดลเดิม หรือการทำงานกับภาษามือจริงโดยไม่มีไฟล์ต้นฉบับและหลักฐานรัน",
+    "result": "ยังประมวลผลไม่ได้",
+    "limit": "รัน data_cleaning.py แล้วไม่พบ data/input.csv; gesture pipeline ขาด cv2 และไม่มี dataset ที่แนบใน Repository",
     "repo": "machine-learning-project",
     "images": []
   },
@@ -514,8 +488,8 @@
       "Firestore",
       "Firebase Storage"
     ],
-    "result": "Repository อธิบายฟังก์ชันที่ออกแบบไว้ และมี reconstructed source สำหรับศึกษา",
-    "limit": "โค้ดถูกสร้างใหม่จากขอบเขตที่บันทึกไว้ ไม่ใช่ไฟล์ต้นฉบับ; ยังไม่ได้ตรวจยืนยันว่าฟังก์ชัน Firebase ทั้งหมดทำงานครบ",
+    "result": "ยังรันไม่ได้",
+    "limit": "ไม่มี Flutter SDK; ไม่มี pubspec.yaml และหน้า pages ที่ service อ้างอิง รวมทั้งยังไม่มี Firebase configuration",
     "repo": "flutter-social-app",
     "images": []
   },
@@ -547,8 +521,8 @@
       "Microcontroller",
       "Mobile Application"
     ],
-    "result": "มีคำอธิบายลำดับเซนเซอร์และการควบคุมที่ออกแบบ",
-    "limit": "ไม่ยืนยันว่ามีอุปกรณ์ที่ทำงานหรือแอปเชื่อมต่อจริง จนกว่าจะมีภาพต้นแบบ โค้ดอุปกรณ์ และผลทดสอบ",
+    "result": "ตรวจได้เฉพาะ source และ schema",
+    "limit": "มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้",
     "repo": "system-analysis-projects",
     "images": []
   },
@@ -581,8 +555,8 @@
       "Resource Planning",
       "Scenario Planning"
     ],
-    "result": "มีแนวคิดและข้อกำหนดแผนกิจกรรมใน Repository",
-    "limit": "ตัวเลขเป็นองค์ประกอบของแผน ไม่ใช่สถิติผู้เข้าร่วมกิจกรรมจริง",
+    "result": "ตรวจได้เฉพาะเอกสาร",
+    "limit": "มี planning.md; ไม่มีหลักฐานการจัดงานจริงหรือแบบแปลนและการอนุมัติจริง",
     "repo": "sun-of-prosperity-open-house",
     "images": []
   },
@@ -593,29 +567,33 @@
       "ux"
     ],
     "kind": "โครงงานต้นแบบ Interactive (reconstructed)",
-    "desc": "ประสบการณ์ดูไพ่ 3D พร้อมเลือกไพ่ เปลี่ยนหน้า และ Zoom",
+    "desc": "แอปเลือกไพ่ 3 ใบ เปิดข้อความด้วย CSS 3D เปลี่ยนไพ่และเริ่มใหม่ได้",
     "role": "ออกแบบ Page Flow และ Interaction ของเว็บ",
     "features": [
-      "Profile / Reading",
-      "Card Selection",
-      "Zoom",
-      "3D Models"
+      "เลือกไพ่",
+      "CSS 3D flip",
+      "ข้อความสะท้อนความคิด",
+      "เริ่มใหม่"
     ],
     "flow": [
-      "Tarot",
-      "Profile",
-      "Reading",
-      "Card Selection"
+      "เลือกไพ่",
+      "เปิดข้อความ",
+      "เปลี่ยนไพ่หรือเริ่มใหม่"
     ],
     "tech": [
-      "Three.js",
-      "JavaScript",
-      "GLB"
+      "HTML",
+      "CSS 3D",
+      "JavaScript"
     ],
-    "result": "มีตัวอย่าง Three.js ที่สร้างใหม่ตามขอบเขตเดิม",
-    "limit": "ไม่มี source และ GLB ต้นฉบับครบ จึงไม่อ้างว่าเป็นระบบเดิมหรือเว็บสาธารณะที่เปิดใช้งาน",
+    "result": "ผ่าน browser checks ที่รันจริง",
+    "limit": "เลือกไพ่ 2, reset และเลือกไพ่ 3 ได้จริง; ใช้ CSS 3D และข้อความสะท้อนความคิดที่เขียนขึ้น ยังไม่ได้ตรวจมือถือจริง",
     "repo": "tarot-3d-interactive",
-    "images": []
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/tarot-3d-interactive/main/evidence/card-selected-actual.jpg",
+        "caption": "เลือกไพ่ใบ 3 จากแอปที่รันจริง; ข้อความสะท้อนความคิด ไม่ใช่การพยากรณ์"
+      }
+    ]
   },
   {
     "id": "space",
@@ -640,9 +618,14 @@
       "Three.js",
       "JavaScript"
     ],
-    "result": "มี Three.js core สร้างใหม่ตามข้อกำหนดเดิม",
-    "limit": "ต้นฉบับไม่พร้อมขณะย้าย Repository โค้ดนี้เป็น reconstructed example ไม่ใช่หลักฐานไฟล์โครงการดั้งเดิม",
+    "result": "ยังไม่ผ่าน WebGL runtime",
+    "limit": "เพิ่ม source ส่วนควบคุมแล้ว แต่ browser สร้าง WebGL context ไม่สำเร็จ จึงยังไม่ยืนยันฉากสามมิติ",
     "repo": "space-explorer-3d",
-    "images": []
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/space-explorer-3d/main/evidence/webgl-unavailable-actual.jpg",
+        "caption": "สถานะจริง: สร้าง WebGL context ไม่ได้ ยังไม่ผ่านฉากสามมิติ"
+      }
+    ]
   }
 ]

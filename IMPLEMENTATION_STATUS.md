@@ -1,34 +1,24 @@
-# Portfolio implementation status — 30 October 2026
+# สถานะการตรวจ
 
-This tracks the rebuild request. It is not a claim that all repositories are complete.
-Excluded repository: `intasan/02739452-26-6621655321`. Its content was not opened or changed during this implementation.
+ยังไม่เสร็จครบทุกโปรเจกต์ รายละเอียดตามหลักฐานจริง [verification](verification.html)
 
-## Completed in this batch
-- [VOLT](https://github.com/intasan/energy-drink-vending-machine): newly implemented Node.js + SQLite application, actual browser checkout/payment screenshots, API tests and GitHub Actions passed. Test products and test payment only.
-- [STILL](https://github.com/intasan/lodging-booking-system): newly implemented booking/search/cancellation application with overlap protection, actual browser screenshots, API tests and GitHub Actions passed. Test rooms only.
-- Portfolio: updated only the vending and booking project records and generated case-study pages, with actual screenshots and honest technology/provenance descriptions. GitHub Pages build and deployment passed.
-- Yuyenpensuk: fixed development-only CSP HTTP asset loading while preserving production HTTPS enforcement, added local public-only preview with visible seed-data disclosure, and passed two header-policy tests. No post-fix screenshot claimed: browser connection failed before visual verification. Product JPGs remain external uploads, not part of this checkout.
+- **app: ยังรันไม่ได้** — ไม่มี Flutter SDK ในสภาพแวดล้อมนี้; การพิสูจน์ MQTT และ LED ต้องมีอุปกรณ์และ broker จริง
+- **flutter-social-app: ยังรันไม่ได้** — ไม่มี Flutter SDK; ไม่มี pubspec.yaml และหน้า pages ที่ service อ้างอิง รวมทั้งยังไม่มี Firebase configuration
+- **gold-trading: ยังไม่มีระบบที่รันได้** — Repository มีเพียง README และ index.html; ไม่มี Airflow DAG, API, Compose, model หรือข้อมูลจริงสำหรับยืนยันตัวเลขเดิม
+- **machine-learning-project: ยังประมวลผลไม่ได้** — รัน data_cleaning.py แล้วไม่พบ data/input.csv; gesture pipeline ขาด cv2 และไม่มี dataset ที่แนบใน Repository
+- **yolo11-object-detection: ยังฝึกหรือประเมินไม่ได้** — รัน train.py แล้วขาด ultralytics; ไม่มีภาพและ labels ของ dataset และไม่มี weights/ผลประเมินที่ตรวจสอบได้
+- **consumer-detective: ตรวจได้เฉพาะเอกสาร** — มี analysis.md; ไม่มีระบบให้รันหรือไฟล์งานนำเสนอฉบับสมบูรณ์
+- **light-pollution-analysis: ตรวจได้เฉพาะเอกสาร** — มี report.md; ไม่มีชุดข้อมูลดิบหรือไฟล์คำนวณสำหรับตรวจซ้ำผลวิเคราะห์
+- **sun-of-prosperity-open-house: ตรวจได้เฉพาะเอกสาร** — มี planning.md; ไม่มีหลักฐานการจัดงานจริงหรือแบบแปลนและการอนุมัติจริง
+- **system-analysis-projects: ตรวจได้เฉพาะ source และ schema** — มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้
+- **tarot-3d-interactive: ผ่าน browser checks ที่รันจริง** — เลือกไพ่ 2, reset และเลือกไพ่ 3 ได้จริง; ใช้ CSS 3D และข้อความสะท้อนความคิดที่เขียนขึ้น ยังไม่ได้ตรวจมือถือจริง
+- **space-explorer-3d: ยังไม่ผ่าน WebGL runtime** — เพิ่ม source ส่วนควบคุมแล้ว แต่ browser สร้าง WebGL context ไม่สำเร็จ จึงยังไม่ยืนยันฉากสามมิติ
+- **intasan: ตรวจ source โปรไฟล์** — README เป็น landing page; ใช้สถานะจาก evidence ของแต่ละ Repository เท่านั้น
+- **portfolio: อัปเดตหลักฐานและข้อจำกัดแล้ว** — ใช้ภาพจาก browser จริง แยก empty/error state ออกจากระบบที่พร้อมใช้ ไม่แสดงธุรกรรม fixture เดิมใน gallery
+- **yuyenpensuk-website: ทดสอบ security policy ผ่าน; CMS ยังไม่ตรวจรับ** — 2 automated tests ผ่าน แต่ startup แบบ REQUIRE_EXISTING_DATA=1 หยุดเพราะไม่มีฐานข้อมูล CMS จริง; ไม่มี product JPG uploads จริงครบ และยังไม่ได้ทดสอบ admin flow
+- **energy-drink-vending-machine: ทดสอบ logic ผ่าน; ข้อมูลธุรกิจยังไม่มี** — 4 unit tests ผ่านด้วย fixture ในหน่วยความจำเท่านั้น; runtime ใหม่ไม่สร้าง sample catalog; ไม่มี integration ชำระเงินจริง/เครื่องจ่ายจริง
+- **lodging-booking-system: ทดสอบ logic ผ่าน; ข้อมูลธุรกิจยังไม่มี** — 4 unit tests ผ่านด้วย fixture ในหน่วยความจำเท่านั้น; runtime ใหม่ไม่สร้าง sample rooms; ไม่มีข้อมูลห้องจริงหรือการเชื่อมผู้ประกอบการ
+- **Thailand-Flood-Intelligence: โค้ดทดสอบผ่าน; ข้อมูลและแบบจำลองยังไม่พร้อม** — Backend 259 passed, 5 skipped; Frontend 20 passed และ build/typecheck ผ่าน; actual API ให้ readiness 503 เพราะ PostGIS ไม่พร้อม; ไม่มีผลเสี่ยงรายที่ดินที่ผ่าน validation; UI readiness แสดงตรวจสอบไม่ได้ เพราะ preview Python ไม่มี uvicorn
+- **thai-gold-price-forecast: รันรวบรวมข้อมูลจริงได้; ยังไม่มี forecast** — รัน HTTP API, query SQLite และจับภาพ Dashboard จริงได้; มีราคาจริง 1 publication; ไม่แสดง forecast/MAE/RMSE เพราะยังไม่มี chronological holdout
 
-## Remaining
-| Repository | Next verifiable work |
-|---|---|
-| yuyenpensuk-website | Recheck styled public pages and product assets; collect actual screenshots; then test CMS against isolated data |
-| thai-gold-price-forecast | Resolve native SQLite installation on Node 24; verify live-source response; correct evaluation split; run and capture actual populated or unavailable-data states |
-| Thailand-Flood-Intelligence | Run API/frontend together, exercise map/readiness/export in browser and capture true data availability; no fabricated flood forecast |
-| gold-trading | Inspect the located source archives, select a coherent baseline, remove secrets, execute ingestion and evaluate on actual data before publishing metrics/screenshots |
-| machine-learning-project | Original notebook not resolved by title search; rebuild/restore executable ETL and gesture components with source data and independently produced outputs |
-| yolo11-object-detection | Obtain a permitted dataset, execute training or inference and publish measured output; configuration alone is not evidence of a trained model |
-| flutter-social-app | Complete runnable Flutter package, Firebase setup and full user flows; capture emulator/device evidence |
-| app | Document existing IoT controller, exercise app; physical LED/MQTT verification requires actual hardware/access |
-| system-analysis-projects | Produce complete requirements, diagrams, traceability and acceptance artifacts; physical clothesline test requires hardware |
-| tarot-3d-interactive | Implement full reading/navigation interaction, local 3D assets with credits and browser evidence |
-| space-explorer-3d | Complete usable camera/object interactions, asset credits and browser evidence |
-| consumer-detective | Recover or create a complete presentation/poster with sources; no original PPTX resolved by title search |
-| light-pollution-analysis | Inspect available report files, verify sources and publish usable report with page previews |
-| sun-of-prosperity-open-house | Produce usable floor/visitor/staff/scenario planning files; do not claim a real event took place |
-| intasan | Align profile claims and links after each project has verified artifacts |
-
-## Verification boundary
-Screenshots are only captured from running systems. Catalogs/transactions used for testing are explicitly identified. No generated screenshot, fake evaluation score, unverified customer count, commercial payment integration or physical-hardware success is claimed.
-
-The Work browser transport disconnected and then timed out during the Yuyenpensuk post-fix check. Further browser captures remain pending. The two completed applications run locally with `npm start`; they have not been deployed as public full-stack services. No background continuation is scheduled.
+ไม่เปิดหรือเปลี่ยน Repository ที่ผู้ใช้ยกเว้น
