@@ -32,7 +32,12 @@
     "result": "ส่งมอบเว็บไซต์ให้บริษัทใช้จริง พร้อมแนวทางติดตั้งด้วย Docker และเก็บข้อมูล/ไฟล์อัปโหลดภายนอก Container",
     "limit": "เอกสารใน Repository อธิบายการติดตั้ง Production; สถานะเซิร์ฟเวอร์จริงอาจเปลี่ยนแปลง จึงเชื่อมไปที่โค้ดและเอกสารประกอบ",
     "repo": "yuyenpensuk-website",
-    "images": []
+    "images": [],
+    "analysis": {
+      "href": "analysis/yuyenpensuk/index.html",
+      "diagram": "analysis/yuyenpensuk/diagrams/data-flow.svg",
+      "label": "Requirement · DFD · Data Model · Workflow · UAT"
+    }
   },
   {
     "id": "agricultural",
@@ -188,7 +193,12 @@
     "result": "มีเอกสารอธิบายราคา กราฟย้อนหลัง และแนวทางประเมิน baseline",
     "limit": "ข้อมูลย้อนหลังสะสมตั้งแต่เริ่มระบบ ต้องมีชุดข้อมูลเพียงพอก่อนประเมินโมเดล; ไม่ใช่คำแนะนำซื้อขาย",
     "repo": "thai-gold-price-forecast",
-    "images": []
+    "images": [],
+    "analysis": {
+      "href": "analysis/gold-thai/index.html",
+      "diagram": "analysis/gold-thai/diagrams/data-flow.svg",
+      "label": "Requirement · DFD · Data Model · Workflow · UAT"
+    }
   },
   {
     "id": "gold-trading",
@@ -260,7 +270,12 @@
     "result": "รุ่น v0.6 มีเครื่องมือแผนที่ นำเข้าข้อมูลย้อนหลัง และเอกสารตรวจความพร้อม",
     "limit": "ยังไม่มีผลจำลองน้ำท่วมที่ผ่านการรับรอง ไม่มีข้อมูลระดับน้ำสด และยังไม่มี Hosted Deployment",
     "repo": "Thailand-Flood-Intelligence",
-    "images": []
+    "images": [],
+    "analysis": {
+      "href": "analysis/flood/index.html",
+      "diagram": "analysis/flood/diagrams/data-flow.svg",
+      "label": "Requirement · DFD · Data Model · Workflow · UAT"
+    }
   },
   {
     "id": "system-design",
@@ -343,7 +358,12 @@
         "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/03-persisted-booking.jpg",
         "caption": "หลังโหลดใหม่ ห้องที่จองไม่ว่าง และประวัติการจองยังอยู่"
       }
-    ]
+    ],
+    "analysis": {
+      "href": "analysis/booking/index.html",
+      "diagram": "analysis/booking/diagrams/data-flow.svg",
+      "label": "Requirement · DFD · Data Model · Workflow · UAT"
+    }
   },
   {
     "id": "adoption",
@@ -424,7 +444,12 @@
         "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/03-paid.jpg",
         "caption": "ผลยืนยันชำระทดลองสำเร็จจากการทดสอบผ่าน Chrome"
       }
-    ]
+    ],
+    "analysis": {
+      "href": "analysis/vending/index.html",
+      "diagram": "analysis/vending/diagrams/data-flow.svg",
+      "label": "Requirement · DFD · Data Model · Workflow · UAT"
+    }
   },
   {
     "id": "gesture",

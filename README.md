@@ -38,3 +38,11 @@ Update featured editorial copy in `index.html` when its featured project's scope
 ## Hosting
 
 Static files are served from the repository root by GitHub Pages. No framework or JavaScript build step is required. Google Fonts are optional enhancements; system fonts remain available as fallbacks. `brand.css` contains no component selectors.
+
+## BA and SA analysis documentation
+
+[Browse five analysis packs](https://intasan.github.io/portfolio/analysis/) covering VOLT, STILL, Yuyenpensuk, GoldSense and Thailand Flood Intelligence. Each contains a requirement catalogue, business rules, context diagram, DFD flow register, workflow, data model and UAT traceability, tied to an immutable source commit. These are newly authored reverse-engineered documents, not invented interview records or retrospective stakeholder sign-off.
+
+Portfolio copies are in `analysis/`; authoritative project copies are in each repository under `docs/analysis/`. Editable diagrams are supplied as SVG and Mermaid.
+
+Rebuild the documentation with `python tools/build_analysis_docs.py` from the portfolio checkout (the five sibling repositories are required), then `node tools/publish_analysis_pages.mjs` (the `marked` package must be available in the Node runtime). Run `python tools/build_project_pages.py` to rebuild case-study links. Document source baselines are versioned explicitly rather than silently following branch changes.

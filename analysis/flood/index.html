@@ -1,0 +1,377 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thailand Flood Intelligence Analysis Documentation</title><meta name="description" content="Requirement Data Flow Data Model Workflow and UAT for Thailand Flood Intelligence"><style>:root{font-family:Arial,Tahoma,sans-serif;color:#202a32;background:#f4f5f5;line-height:1.8}*{box-sizing:border-box}body{margin:0}header{padding:20px max(24px,calc((100vw - 1120px)/2));background:#172d3d;color:white;display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap}header a{color:white}main{max-width:1180px;margin:30px auto;padding:40px;background:white}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:22px;margin:45px 0 18px;padding-top:12px;color:#172d3d}p{margin:15px 0}a{color:#225b7d;text-underline-offset:3px}li{margin:9px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.7}th,td{border:1px solid #d5dce0;padding:12px 14px;text-align:left;vertical-align:top}th{background:#edf1f3;color:#172d3d}tr:nth-child(even) td{background:#fbfcfd}.table-wrap{overflow:auto;margin:20px 0}img{display:block;width:100%;height:auto;border:1px solid #dde3e7;margin:25px 0}code{background:#eef1f3;padding:2px 4px;overflow-wrap:anywhere}nav{padding:20px 0;display:flex;gap:15px;flex-wrap:wrap;font-size:12px;border-bottom:1px solid #dde3e7}footer{max-width:1120px;margin:auto;padding:20px 0 40px;color:#637480;font-size:12px}.meta{color:#637480;font-size:12px}button{font:inherit;padding:8px 12px;background:white;border:1px solid #aebdc7;cursor:pointer}@media(max-width:700px){main{margin:0;padding:25px 18px}h1{font-size:24px}h2{font-size:20px}table{min-width:680px}header{padding:18px}footer{padding:20px}}@media print{@page{size:A4 landscape;margin:15mm}header,nav,.controls{display:none}body{background:white;font-size:10pt}main{margin:0;padding:0;max-width:none}h1{font-size:22pt}h2{font-size:15pt;break-after:avoid;margin-top:25px}img{max-height:160mm;object-fit:contain;break-inside:avoid}table{font-size:8pt;min-width:0}tr{break-inside:avoid}thead{display:table-header-group}.table-wrap{overflow:visible}a{color:inherit}footer{display:none}}</style></head><body><header><b>Panupong Intasan · System Analysis</b><a href="https://intasan.github.io/portfolio/">กลับ Portfolio ↗</a><a href="https://github.com/intasan/Thailand-Flood-Intelligence/tree/main/docs/analysis">เอกสารและไฟล์ต้นฉบับ GitHub ↗</a></header><main><p class="meta">ANALYSIS DOCUMENT 1.0 · 30 OCTOBER 2026 · SOURCE 6c1ca635</p><nav aria-label="สารบัญเอกสาร"><a href="#section-1">1 เป้าหมาย ผู้ใช้งาน และขอบเขต</a><a href="#section-2">2 วิธีเก็บและยืนยันความต้องการ</a><a href="#section-3">3 Functional Requirements และเกณฑ์ยอมรับ</a><a href="#section-4">4 Business Rules</a><a href="#section-5">5 Non Functional Requirements</a><a href="#section-6">6 Context Diagram</a><a href="#section-7">7 Data Flow Diagram และทะเบียนข้อมูล</a><a href="#section-8">8 Workflow</a><a href="#section-9">9 Data Model และ Data Dictionary</a><a href="#section-10">10 UAT และ Requirement Traceability</a><a href="#section-11">11 ข้อจำกัดและความเสี่ยง</a><a href="#section-12">12 คำถามที่ต้องยืนยันก่อนขยายระบบ</a><a href="#section-13">13 Source Baseline และประวัติเอกสาร</a></nav><h1>Thailand Flood Intelligence เอกสารวิเคราะห์ความต้องการและออกแบบระบบ</h1>
+<p>รุ่นเอกสาร 1.0 · วันที่ 30 October 2026 · ผู้จัดทำ Panupong Intasan โดยใช้ AI assistance ใน ChatGPT Work</p>
+<p>ให้ประชาชนและนักวิจัยดูข้อมูลตำแหน่ง ความสูงพื้นผิว และข้อมูลสถานีที่มี provenance พร้อมแสดงความพร้อมและข้อจำกัด ระบบยังไม่เปิดความเสี่ยงน้ำท่วมรายที่ดิน ไม่มี live gauge feed และไม่มี hydraulic pilot ที่รับรองแล้ว</p>
+<p><strong>สถานะเอกสาร:</strong> จัดทำใหม่จากการอ่านโค้ด ณ commit <code>6c1ca635e649e3fd83bbe4890d99fdf38c0eb941</code> เพื่ออธิบายระบบและใช้ตรวจรับ ไม่ใช่บันทึกการสัมภาษณ์หรือหลักฐานว่าผู้มีส่วนได้ส่วนเสียอนุมัติ Requirement แล้ว รายการที่ยังต้องตัดสินใจอยู่ในหัวข้อคำถามยืนยัน</p>
+<p><a href="https://intasan.github.io/portfolio/analysis/flood/index.html">อ่านฉบับเว็บบน Portfolio</a> · <a href="index.html">ไฟล์ HTML</a> · <a href="https://github.com/intasan/Thailand-Flood-Intelligence/tree/main/docs/analysis/diagrams">Diagram source</a></p>
+<h2 id="section-1">1 เป้าหมาย ผู้ใช้งาน และขอบเขต</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ผู้เกี่ยวข้อง</th>
+<th>หน้าที่</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ผู้ใช้ Dashboard</td>
+<td>ค้นตำแหน่ง วาด/นำเข้าแปลง และอ่านข้อมูลย้อนหลังที่มี</td>
+</tr>
+<tr>
+<td>นักวิจัย</td>
+<td>เรียก API ตรวจ source เวลา หน่วย datum และผลตรวจแพ็กเกจ</td>
+</tr>
+<tr>
+<td>ผู้ดูแลข้อมูล</td>
+<td>นำเข้าข้อมูลที่มีสิทธิ์ใช้และตรวจ quarantine / ingest log</td>
+</tr>
+<tr>
+<td>ผู้ตรวจแบบจำลอง</td>
+<td>เตรียม review evidence และลงนามตามกระบวนการภายนอก ไม่ใช่ Admin UI</td>
+</tr>
+</tbody></table></div>
+<p><strong>อยู่ในขอบเขต:</strong> Map/parcel tools, approved historical observations, data provenance, research API, offline audit/export และ readiness reporting</p>
+<p><strong>อยู่นอกขอบเขต:</strong> ผลน้ำท่วมรายบ้านที่รับรองแล้ว การจำลอง hydraulic จริง live gauge feed การรังวัดระดับที่ดิน และระบบเตือนภัย Production</p>
+<h2 id="section-2">2 วิธีเก็บและยืนยันความต้องการ</h2>
+<p>เอกสารรอบนี้ใช้ source review, schema review และผลทดสอบที่มีอยู่เป็น input ข้อกำหนดแบบ As implemented ใช้อธิบายพฤติกรรมที่พบในโค้ด ส่วน To be เป็นข้อเสนอหรือคำถามที่ยังไม่ได้อนุมัติ ไม่มีการสร้างชื่อผู้ให้สัมภาษณ์ วันประชุม หรือผลลงนามย้อนหลัง</p>
+<p>กระบวนการยืนยันที่เสนอคือให้ผู้ใช้งานหลักทบทวน scope และ Business Rules จากนั้นเดินผ่าน scenario ปกติและข้อผิดพลาด บันทึกคำตอบพร้อมผู้ตัดสินใจ แล้วปรับ version ของ Requirement และ UAT ก่อนรับรองการใช้งานจริง</p>
+<h2 id="section-3">3 Functional Requirements และเกณฑ์ยอมรับ</h2>
+<p>ทุกแถวต่อไปนี้เป็น <strong>As implemented จากโค้ด</strong> คอลัมน์หลักฐานแยกสิ่งที่มีการทดสอบเดิมกับสิ่งที่เพียงพบใน source การจัดทำเอกสารไม่ได้ทำให้ผลทดสอบที่ยังรออยู่กลายเป็นผ่าน</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>รหัส</th>
+<th>ความต้องการ</th>
+<th>เกณฑ์ยอมรับ</th>
+<th>Source</th>
+<th>หลักฐานหรือสถานะ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F-FR01</td>
+<td>รับพิกัดและ Polygon ที่ถูกต้อง</td>
+<td>/v1/assess ตรวจ lat/lon และ /parcels/assess รับ 2D WGS84 Polygon ที่ valid ไม่เกิน 1000 vertices</td>
+<td>backend/app/main.py</td>
+<td>มี tests/test_api.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR02</td>
+<td>คืน unknown เมื่อยังไม่มีผลที่รับรอง</td>
+<td>assessment ส่ง status unsupported, risk unknown และค่าความลึก/ระยะเวลา null</td>
+<td>backend/app/main.py</td>
+<td>มี tests/test_api.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR03</td>
+<td>คำนวณพื้นที่แปลงและรูในแปลง</td>
+<td>พื้นที่แบบ WGS84 ellipsoidal; จุดตัวแทนใช้แสดงผล ไม่ใช่วิเคราะห์ทั้งแปลง</td>
+<td>backend/app/main.py</td>
+<td>มี tests/test_api.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR04</td>
+<td>ค้นตำแหน่งและความสูงจาก provider</td>
+<td>ตรวจและ cache payload ตาม providers.py; upstream ใช้ไม่ได้ให้ตอบข้อผิดพลาด</td>
+<td>backend/app/providers.py</td>
+<td>มี tests/test_providers.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR05</td>
+<td>เปิดข้อมูลสถานีเฉพาะ source อนุมัติ</td>
+<td>query ต้องมี approval_status approved และ license_evidence ไม่ว่าง</td>
+<td>backend/app/repository.py</td>
+<td>มี tests/test_postgis.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR06</td>
+<td>คืน series โดยไม่เติมค่าที่หาย</td>
+<td>/observations ส่งแถวจริงและ gaps ไม่ interpolation; ช่วงเวลาไม่เกิน 31 วันและไม่เกิน 10000 แถว</td>
+<td>backend/app/repository.py</td>
+<td>มี tests/test_postgis.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR07</td>
+<td>นำเข้าแบบ atomic และเก็บ provenance</td>
+<td>validate ข้อมูล source เวลา หน่วยและ hash ก่อนบันทึก/กักกันตามตัวนำเข้า</td>
+<td>backend/app/ingest.py</td>
+<td>มี tests/test_ingest.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR08</td>
+<td>รายงาน readiness ตามข้อมูลจริง</td>
+<td>แยก archive, live, survey, model และ risk; DB ใช้ไม่ได้ต้องไม่แสดงเป็น 0 ที่ดูเหมือนมีข้อมูลครบ</td>
+<td>backend/app/main.py</td>
+<td>มี tests/test_api.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR09</td>
+<td>ตรวจแพ็กเกจโมเดลก่อน Research API อ่าน</td>
+<td>ตรวจหลักฐานและลายเซ็น/ไฟล์ตาม model gates; ไม่เท่ากับรับรองฟิสิกส์ของแบบจำลอง</td>
+<td>backend/app/models.py</td>
+<td>มี tests/test_models.py ใน repo</td>
+</tr>
+<tr>
+<td>F-FR10</td>
+<td>ส่งออก observation ด้วยคำขอที่ระบุขอบเขต</td>
+<td>manual Airflow export ระบุสถานี ช่วงเวลา request ID และสิทธิ์ใช้ ไม่สร้าง simulated series</td>
+<td>pipelines/dags/hii_observation_export.py</td>
+<td>มี tests/test_export_job.py และ VERIFICATION.md</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-4">4 Business Rules</h2>
+<ol>
+<li>sources ที่ไม่ approved หรือไม่มี license evidence ไม่ถูกนำมาแสดงใน public queries</li>
+<li>ระดับสถานีไม่ใช่ระดับน้ำของที่ดิน; datum ของสองแหล่งต่างกันห้ามลบกันเพื่ออ้างความลึกท่วม</li>
+<li>ค่า 0 และค่าติดลบที่มีคุณภาพผ่านเป็นค่าจริงได้ ห้ามแทน missing ด้วย 0</li>
+<li>freshness ของสถานีใช้เกณฑ์ 3600 วินาทีใน repository.py; gaps มากกว่า 900 วินาทีเป็นตัวบอกช่องว่างของระบบ ไม่ใช่ rating ทางการ</li>
+<li>model_runs เป็นตารางใน schema แต่ research model gate อ่านแพ็กเกจไฟล์; ห้ามตีความว่าตารางนี้แปลว่ามี solver หรือ model ที่อนุมัติแล้ว</li>
+</ol>
+<h2 id="section-5">5 Non Functional Requirements</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>รหัส</th>
+<th>ประเด็น</th>
+<th>เกณฑ์และสถานะ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flood-NFR01</td>
+<td>Data integrity</td>
+<td>ใช้การตรวจสอบ input และการบันทึกที่สอดคล้องกับ business rules; ดูข้อจำกัดรายโครงการด้านล่าง</td>
+</tr>
+<tr>
+<td>flood-NFR02</td>
+<td>Access control</td>
+<td>ตรวจสิทธิ์ที่ server ตาม actor และ endpoint; ไม่อ้างสิทธิ์ที่ระบบยังไม่มี</td>
+</tr>
+<tr>
+<td>flood-NFR03</td>
+<td>Observability</td>
+<td>ต้องอธิบาย error / unavailable และ provenance ที่มีอยู่; audit trail แบบสมบูรณ์ยังไม่ถือว่ามี</td>
+</tr>
+<tr>
+<td>flood-NFR04</td>
+<td>Usability</td>
+<td>เสนอให้ทดสอบ desktop และ mobile ตั้งแต่ 360 px พร้อม keyboard; ยังไม่มีผลตรวจครบทุกขนาด</td>
+</tr>
+<tr>
+<td>flood-NFR05</td>
+<td>Performance</td>
+<td>ยังไม่มี SLA ที่ผู้เกี่ยวข้องอนุมัติ ต้องกำหนดจำนวนผู้ใช้และเกณฑ์ response time ก่อน load test</td>
+</tr>
+<tr>
+<td>flood-NFR06</td>
+<td>Recovery</td>
+<td>เสนอให้ทดสอบสำรองและกู้คืนข้อมูลพร้อมไฟล์ที่สัมพันธ์กัน; RPO/RTO ยังต้องตกลง ไม่กำหนดตัวเลขแทนผู้ใช้</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-6">6 Context Diagram</h2>
+<p><img src="diagrams/context.svg" alt="Context Diagram"></p>
+<p>อ่านร่วมกับ <a href="diagrams/context.mmd">Mermaid context source</a> ซึ่งแสดงข้อมูลขาเข้าและขาออกแยกทิศทาง Context Diagram กำหนดขอบเขตระบบทั้งก้อน ไม่แสดง data store ภายใน</p>
+<h2 id="section-7">7 Data Flow Diagram และทะเบียนข้อมูล</h2>
+<p><img src="diagrams/data-flow.svg" alt="Data flow process overview"></p>
+<p>ภาพ SVG เป็น process overview แบบย่อ ส่วน <a href="diagrams/data-flow.mmd">DFD Mermaid source</a> และทะเบียนด้านล่างแสดงทิศทาง request/response และ data store อย่างละเอียด ห้ามตีความลูกศรเป็นลำดับเวลาดำเนินงานอย่างเดียว</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>ต้นทาง</th>
+<th>ปลายทาง</th>
+<th>ข้อมูลที่ส่งไป</th>
+<th>ข้อมูลตอบกลับ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D01</td>
+<td>Operator / provider</td>
+<td>1.0 Validate / ingest</td>
+<td>raw source + rights/provenance metadata</td>
+<td>receipt / quarantine / validation error</td>
+</tr>
+<tr>
+<td>D02</td>
+<td>1.0 Validate / ingest</td>
+<td>D1 Sources Stations + D2 Observations</td>
+<td>ตรวจ source และเขียนข้อมูลที่ผ่าน</td>
+<td>transaction status / ingest log</td>
+</tr>
+<tr>
+<td>D03</td>
+<td>Dashboard / researcher</td>
+<td>2.0 Query / readiness</td>
+<td>coordinates Polygon station/time query</td>
+<td>geometry metadata observations หรือ unknown</td>
+</tr>
+<tr>
+<td>D04</td>
+<td>2.0 Query / readiness</td>
+<td>D1 Sources Stations + D2 Observations</td>
+<td>อ่านเฉพาะ source approved และ licensed</td>
+<td>series source datum freshness และ gaps</td>
+</tr>
+<tr>
+<td>D05</td>
+<td>2.0 Query / readiness</td>
+<td>Model package files / providers</td>
+<td>ตรวจแพ็กเกจหรือเรียก provider ตาม endpoint</td>
+<td>ผลที่ผ่าน gate หรือ unavailable/rejected</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-8">8 Workflow</h2>
+<p><img src="diagrams/workflow.svg" alt="Workflow"></p>
+<ol>
+<li>เลือกตำแหน่งหรือแปลง</li>
+<li>ตรวจรูปทรงและอ่าน source ที่อนุญาต</li>
+<li>แสดงสถานี เวลา หน่วย datum และ gaps</li>
+<li>ตรวจ availability และหลักฐานโมเดล</li>
+<li>คืนข้อมูลที่มี หรือ unknown พร้อมเหตุผล</li>
+</ol>
+<p>ข้อผิดพลาดต้องส่งผลตาม Requirement ที่เกี่ยวข้องและไม่ข้ามการตรวจสิทธิ์หรือความถูกต้องของข้อมูล <a href="diagrams/workflow.mmd">แก้ไข Mermaid workflow</a></p>
+<h2 id="section-9">9 Data Model และ Data Dictionary</h2>
+<p><img src="diagrams/data-model.svg" alt="Data model"></p>
+<p>แบบจำลองแสดง core entities ตาม schema ที่ตรวจอ่าน ความสัมพันธ์ที่แอปคาดหวังอาจเข้มกว่าข้อจำกัด nullable ของฐานข้อมูล จึงต้องอ่าน DDL และ validation ประกอบ</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Entity หรือ data store</th>
+<th>ข้อมูลหลัก</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SOURCES</td>
+<td>id TEXT PK; title / url; license_evidence; approval_status</td>
+</tr>
+<tr>
+<td>STATIONS</td>
+<td>id TEXT PK; source_id FK; location Point 4326; vertical_datum; metadata JSONB</td>
+</tr>
+<tr>
+<td>OBSERVATIONS</td>
+<td>station_id FK + PK; observed_at PK timestamptz; value / unit; ingested_at / raw_sha256; metadata JSONB</td>
+</tr>
+<tr>
+<td>INGEST_LOG</td>
+<td>id bigserial PK; source_id FK; started_at / status; raw_sha256 / detail</td>
+</tr>
+</tbody></table></div>
+<p>ERD นี้เลือกแสดง observation path เท่านั้น ตาราง <code>river_reaches</code> มี downstream self reference และ <code>model_runs</code> เก็บ metadata ตาม DDL ไม่ได้หมายความว่า pipeline hydraulic model ทำงานแล้ว ส่วน model gate ใช้แพ็กเกจไฟล์แยกจากตารางดังกล่าว</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Child</th>
+<th>Relationship</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SOURCES</td>
+<td>STATIONS</td>
+<td>1 to many</td>
+</tr>
+<tr>
+<td>STATIONS</td>
+<td>OBSERVATIONS</td>
+<td>1 to many</td>
+</tr>
+<tr>
+<td>SOURCES</td>
+<td>INGEST_LOG</td>
+<td>1 to many</td>
+</tr>
+</tbody></table></div>
+<p><a href="diagrams/data-model.mmd">Mermaid data model source</a></p>
+<h2 id="section-10">10 UAT และ Requirement Traceability</h2>
+<p>ตารางนี้เป็น test design และ mapping กับหลักฐานที่มี การผ่าน unit/API test ไม่เท่ากับผู้ใช้ปลายทางลงนาม UAT</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Requirement</th>
+<th>ขั้นตอนหรือ input</th>
+<th>ผลคาดหวัง</th>
+<th>สถานะหลักฐาน</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F-UAT01</td>
+<td>F-FR02</td>
+<td>ถาม risk ณ พิกัดที่ยังไม่รองรับ</td>
+<td>unknown / unsupported ไม่แสดงว่าปลอดภัย</td>
+<td>มี automated evidence เดิม ไม่รันใหม่รอบเอกสาร</td>
+</tr>
+<tr>
+<td>F-UAT02</td>
+<td>F-FR01 F-FR03</td>
+<td>Polygon มีรูและรูปร่างเว้า</td>
+<td>พื้นที่หักรูและจุดแทนอยู่ในแปลง</td>
+<td>มี automated evidence เดิม</td>
+</tr>
+<tr>
+<td>F-UAT03</td>
+<td>F-FR05</td>
+<td>withdraw source หลังนำเข้า</td>
+<td>public query ไม่แสดงข้อมูล source นั้น</td>
+<td>มี automated evidence เดิม</td>
+</tr>
+<tr>
+<td>F-UAT04</td>
+<td>F-FR06</td>
+<td>series มีช่วงข้อมูลขาด</td>
+<td>ส่ง gaps และไม่เติมค่าระหว่างจุด</td>
+<td>มี automated evidence เดิม</td>
+</tr>
+<tr>
+<td>F-UAT05</td>
+<td>F-FR08</td>
+<td>หยุดฐานข้อมูล</td>
+<td>readiness ระบุ unavailable ไม่ใช่ข้อมูลครบ</td>
+<td>มี tests ใน repo</td>
+</tr>
+<tr>
+<td>F-UAT06</td>
+<td>F-FR09</td>
+<td>package ขาด signature หรือไฟล์ checksum ไม่ตรง</td>
+<td>ไม่อนุญาตอ่านผลโมเดล</td>
+<td>มี tests ใน repo</td>
+</tr>
+</tbody></table></div>
+<p><strong>ผู้ตรวจรับ:</strong> ยังไม่กำหนด · <strong>วันที่ตรวจรับกับผู้ใช้:</strong> ยังไม่ดำเนินการในรอบเอกสารนี้ · <strong>ผลลงนาม:</strong> ยังไม่มี</p>
+<h2 id="section-11">11 ข้อจำกัดและความเสี่ยง</h2>
+<ul>
+<li>ERD แสดงเฉพาะ core observation path; ยังมี river_reaches และ model_runs ใน DDL ซึ่งไม่ใช่ solver ที่ใช้งานแล้ว</li>
+<li>เอกสาร VERIFICATION.md เก็บหลักฐาน CI เดิม แต่การจัดทำเอกสารรอบนี้ไม่ได้รัน pipeline หรือรับรองโมเดลซ้ำ</li>
+<li>ต้องมี visual/WebGL/GPS QA และการตรวจทางอุทกวิทยาก่อนเปิดผลสาธารณะ</li>
+</ul>
+<h2 id="section-12">12 คำถามที่ต้องยืนยันก่อนขยายระบบ</h2>
+<ol>
+<li>พื้นที่นำร่องและเหตุการณ์ใดจะใช้ calibration/validation แยกกัน</li>
+<li>ใครเป็นผู้ตรวจที่รับรองได้และมีอำนาจอนุมัติการเผยแพร่ผล</li>
+<li>แหล่ง live feed ที่มีสิทธิ์ใช้มีไหนบ้างและมี SLA อย่างไร</li>
+<li>ต้องแปลง vertical datum ด้วยข้อมูลสำรวจชุดใดและใครตรวจความถูกต้อง</li>
+<li>ผลสาธารณะควรใช้ระดับความไม่แน่นอนและคำเตือนแบบใดเมื่อข้อมูลบางส่วนหาย</li>
+</ol>
+<h2 id="section-13">13 Source Baseline และประวัติเอกสาร</h2>
+<ul>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/backend/app/main.py">backend/app/main.py</a></li>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/backend/app/repository.py">backend/app/repository.py</a></li>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/backend/app/ingest.py">backend/app/ingest.py</a></li>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/backend/app/models.py">backend/app/models.py</a></li>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/db/001_init.sql">db/001_init.sql</a></li>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/db/002_provenance.sql">db/002_provenance.sql</a></li>
+<li><a href="https://github.com/intasan/Thailand-Flood-Intelligence/blob/6c1ca635e649e3fd83bbe4890d99fdf38c0eb941/docs/VERIFICATION.md">docs/VERIFICATION.md</a></li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>วันที่</th>
+<th>รายการเปลี่ยนแปลง</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.0</td>
+<td>30 October 2026</td>
+<td>จัดทำ requirement catalogue, data flow register, diagrams, data dictionary และ UAT traceability จาก source baseline</td>
+</tr>
+</tbody></table></div>
+<p>เอกสารวิเคราะห์และไดอะแกรมเป็น deliverable ใหม่ ไม่ใช่ภาพหน้าจอหรือหลักฐานผลการทำงานที่ยังไม่ได้ทดสอบ ไม่มีการอ่านหรือแก้ repository ที่ผู้ใช้ระบุให้ยกเว้น</p>
+</main><footer>เอกสารวิเคราะห์จาก source baseline ไม่ใช่บันทึกสัมภาษณ์หรือการรับรอง UAT ที่ยังไม่ได้ดำเนินการ</footer></body></html>

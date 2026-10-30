@@ -1,0 +1,35 @@
+erDiagram
+  SOURCES |o--o{ STATIONS : references
+  STATIONS ||--o{ OBSERVATIONS : references
+  SOURCES |o--o{ INGEST_LOG : references
+  SOURCES {
+    text id PK
+    text title 
+    text url 
+    text license_evidence 
+    text approval_status 
+  }
+  STATIONS {
+    text id PK
+    text source_id FK
+    geometry location 
+    text vertical_datum 
+    jsonb metadata 
+  }
+  OBSERVATIONS {
+    text station_id PK, FK
+    timestamptz observed_at PK
+    timestamptz ingested_at 
+    double value 
+    text unit 
+    text raw_sha256 
+    jsonb metadata 
+  }
+  INGEST_LOG {
+    bigserial id PK
+    text source_id FK
+    timestamptz started_at 
+    text status 
+    text raw_sha256 
+    text detail 
+  }

@@ -1,0 +1,17 @@
+flowchart TD
+  N0["Operator / provider"]
+  N1["1.0 Validate / ingest"]
+  N2["D1 Sources Stations + D2 Observations"]
+  N3["Dashboard / researcher"]
+  N4["2.0 Query / readiness"]
+  N5["Model package files / providers"]
+  N0 -->|"D01 raw source + rights/provenance metadata"| N1
+  N1 -->|"receipt / quarantine / validation error"| N0
+  N1 -->|"D02 ตรวจ source และเขียนข้อมูลที่ผ่าน"| N2
+  N2 -->|"transaction status / ingest log"| N1
+  N3 -->|"D03 coordinates Polygon station/time query"| N4
+  N4 -->|"geometry metadata observations หรือ unknown"| N3
+  N4 -->|"D04 อ่านเฉพาะ source approved และ licensed"| N2
+  N2 -->|"series source datum freshness และ gaps"| N4
+  N4 -->|"D05 ตรวจแพ็กเกจหรือเรียก provider ตาม endpoint"| N5
+  N5 -->|"ผลที่ผ่าน gate หรือ unavailable/rejected"| N4
