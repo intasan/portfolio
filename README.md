@@ -22,7 +22,7 @@ All 17 projects also have standalone HTML case-study pages. Project links open n
 - `tools/build_project_pages.py`: regenerate case studies, project JS and sitemap from `projects.json`.
 - `tools/render_film.py`: reproduce the original geometric 3D artwork; requires Python, NumPy and Pillow.
 - `assets/film-v1/`: 48 high frames and 16 low frames per orientation, posters, manifest, and an original four-second motion export. Runtime loads only one orientation. The MP4 is a source export and is not loaded by the website.
-- `CV_Panupong_Intasan.pdf`, `ppe-case-study.html`: downloadable CV and a proposed BA assignment excerpt.
+- `cv-verified.html`, `ppe-case-study.html`: evidence-grounded online CV (print-to-PDF supported) and a proposed BA assignment excerpt. The older PDF was removed because it had not been fully verified.
 - `QA.md`: verification scope and limitations.
 
 ## Content maintenance
