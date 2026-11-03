@@ -1,6 +1,6 @@
 {
-  "html_pages": 27,
-  "local_references_checked": 333,
+  "html_pages": 28,
+  "local_references_checked": 361,
   "issues": [],
   "external_urls": [
     "https://fonts.googleapis.com",
@@ -58,6 +58,13 @@
     "https://github.com/intasan/yuyenpensuk-website/blob/f3d52d949649cb190f92496092bc6b0dc6739541/routes/admin.js",
     "https://github.com/intasan/yuyenpensuk-website/blob/f3d52d949649cb190f92496092bc6b0dc6739541/routes/site.js",
     "https://github.com/intasan/yuyenpensuk-website/blob/f3d52d949649cb190f92496092bc6b0dc6739541/tests/security-headers.test.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/database.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/deploy-server.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/docker-compose.yml",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/middleware/auth.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/routes/admin.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/routes/site.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/tests/security-headers.test.js",
     "https://github.com/intasan/yuyenpensuk-website/tree/main/docs/analysis",
     "https://github.com/intasan/yuyenpensuk-website/tree/main/docs/analysis/diagrams",
     "https://intasan.github.io/portfolio/",
@@ -87,13 +94,8 @@
     "https://raw.githubusercontent.com/intasan/02739452-26-6621655321/main/evidence/third_source/screenshots/dashboard.png",
     "https://raw.githubusercontent.com/intasan/02739452-26-6621655321/main/evidence/third_source/screenshots/graph.png",
     "https://raw.githubusercontent.com/intasan/Thailand-Flood-Intelligence/main/evidence/readiness-actual.jpg",
-    "https://raw.githubusercontent.com/intasan/Thailand-Flood-Intelligence/main/evidence/test-log-view.jpg",
-    "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/empty-real-data-actual.jpg",
-    "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/empty-real-data-actual.jpg",
-    "https://raw.githubusercontent.com/intasan/space-explorer-3d/main/evidence/webgl-unavailable-actual.jpg",
     "https://raw.githubusercontent.com/intasan/tarot-3d-interactive/main/evidence/card-selected-actual.jpg",
     "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/dashboard-actual.jpg",
-    "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/database-api-log-view.jpg",
     "https://yuyenpensuk.com/"
   ],
   "scope": "Static HTML links, fragments, alt text, duplicate IDs, metadata and homepage audit exclusion. No external HTTP or browser assertions in this check."

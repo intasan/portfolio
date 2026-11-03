@@ -1,0 +1,16 @@
+erDiagram
+ animals ||--o{ adoption_requests : receives
+ adopters ||--o{ adoption_requests : submits
+ animals { int id PK
+ varchar name
+ varchar species
+ varchar status
+ text description }
+ adopters { int id PK
+ varchar name
+ varchar email UK }
+ adoption_requests { int id PK
+ int animal_id FK
+ int adopter_id FK
+ varchar status
+ timestamp created_at }

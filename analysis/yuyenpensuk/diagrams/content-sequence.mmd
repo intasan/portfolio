@@ -1,0 +1,17 @@
+sequenceDiagram
+ actor Admin
+ participant Route as Express admin route
+ participant DB as database.js
+ participant Files as JSON and uploads
+ Admin->>Route: Content, CSRF, optional files
+ Route->>Route: Check session, CSRF and file bytes
+ Route->>DB: save()
+ DB->>Files: Write temporary JSON and rename
+ Files-->>DB: Persisted or error
+ DB-->>Route: Result
+ alt Success
+ Route->>Files: Clean unused uploads
+ Route-->>Admin: Redirect
+ else Failure
+ Route-->>Admin: Error and rollback handling
+ end

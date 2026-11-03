@@ -1,0 +1,31 @@
+{
+  "baseline": "32f78f8cb728556f4fb784518cfb8cd16b132df1",
+  "hero_byte_identical": true,
+  "assets": [
+    {
+      "path": "brand.css",
+      "unchanged": true,
+      "sha256": "0734a1214bdcb25d5954df4059c55901e3dfdc79a46caffabf31bfaf83a55f7d"
+    },
+    {
+      "path": "engine/base.css",
+      "unchanged": true,
+      "sha256": "5c1ba04c5ab559679eaf879f2edbaa5721bde27213f4dabb6535332894f70a5e"
+    },
+    {
+      "path": "engine/maximal.css",
+      "unchanged": true,
+      "sha256": "a594ba1b48e0d2d45be1b97a7201dd33478fc62648d743d530a24130bf31d1c1"
+    },
+    {
+      "path": "engine/effects.js",
+      "unchanged": true,
+      "sha256": "07539bfcd808a6de58895ee044e0f7d645b6f20cd9d41703282cf38f46317f37"
+    },
+    {
+      "path": "engine/site.js",
+      "unchanged": true,
+      "sha256": "7650819fc74d40a279cab2fa677f245eeabd4806499a164aa1371a9828fcf31d"
+    }
+  ]
+}

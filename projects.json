@@ -32,7 +32,32 @@
     ],
     "result": "เว็บไซต์บริษัทและ CMS พร้อม Source Code, แนวทาง Deployment และเอกสารวิเคราะห์ระบบ",
     "repo": "yuyenpensuk-website",
-    "images": [],
+    "images": [
+      {
+        "src": "evidence/acceptance/yuyenpensuk/home.jpg",
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าแรก / Public homepage · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+      },
+      {
+        "src": "evidence/acceptance/yuyenpensuk/products.jpg",
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้ารวมสินค้า / Product catalog · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+      },
+      {
+        "src": "evidence/acceptance/yuyenpensuk/product-detail.jpg",
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: รายละเอียดสินค้า / Product detail · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+      },
+      {
+        "src": "evidence/acceptance/yuyenpensuk/services.jpg",
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าบริการ / Services · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+      },
+      {
+        "src": "evidence/acceptance/yuyenpensuk/projects.jpg",
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าผลงาน / Company projects · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+      },
+      {
+        "src": "evidence/acceptance/yuyenpensuk/admin-login.jpg",
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าเข้าสู่ระบบ / Admin login · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+      }
+    ],
     "analysis": {
       "href": "analysis/yuyenpensuk/index.html",
       "diagram": "analysis/yuyenpensuk/diagrams/data-flow.svg",
@@ -123,35 +148,32 @@
   },
   {
     "id": "motoinsight",
-    "title": "MotoInsight — Data Analysis & ETL",
+    "title": "MotoInsight — Scraping & Data Preparation",
     "cats": [
       "da"
     ],
     "kind": "โครงงานรายวิชา",
-    "desc": "Notebook รวบรวมข้อมูลรถจักรยานยนต์จาก CheckRaka และอัตราแลกเปลี่ยนผ่าน REST API",
-    "role": "จัดเตรียมข้อมูลด้วย Web Scraping / API ทำความสะอาด แปลงข้อมูล และนำเสนอผ่านกราฟกับ Dashboard",
+    "desc": "Source Python สำหรับอ่านรายการรถจักรยานยนต์จาก CheckRaka ทำความสะอาด CSV และสรุปข้อมูล ยังไม่มี Dashboard หรือผล Dataset ที่ตรวจยืนยัน",
+    "role": "ศึกษาการแยกข้อมูลจาก HTML และจัดเตรียม CSV เพื่อใช้วิเคราะห์ต่อ",
     "features": [
-      "Web Scraping",
-      "REST API",
-      "Data Cleaning",
-      "CSV / XLSX Export",
-      "Gradio Dashboard"
+      "CheckRaka HTML parser",
+      "CSV export",
+      "Duplicate removal",
+      "Missing-value handling",
+      "Descriptive summary"
     ],
     "flow": [
-      "Web / API",
-      "Transform",
-      "Export",
-      "Analysis",
-      "Gradio"
+      "อ่าน HTML",
+      "แยกข้อมูลและลิงก์",
+      "ส่งออก CSV",
+      "ทำความสะอาด",
+      "สรุปข้อมูล"
     ],
     "tech": [
       "Python",
       "Pandas",
-      "NumPy",
-      "BeautifulSoup",
-      "Matplotlib",
-      "Plotly",
-      "Gradio"
+      "Requests",
+      "BeautifulSoup"
     ],
     "result": "Source สำหรับการจัดเตรียมและวิเคราะห์ข้อมูล ยังไม่มีผลการประมวลผลจาก Dataset จริงที่ยืนยันใน Portfolio นี้",
     "repo": "machine-learning-project",
@@ -190,10 +212,6 @@
       {
         "src": "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/dashboard-actual.jpg",
         "caption": "Dashboard กับราคาจริง 1 publication; ยังไม่มี forecast"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/database-api-log-view.jpg",
-        "caption": "ภาพ viewer ของ log HTTP และ SQL ที่รันจริง ไม่ใช่หน้าจอโปรแกรมจัดการ DB"
       }
     ]
   },
@@ -204,7 +222,7 @@
       "da",
       "sa"
     ],
-    "kind": "Concept Study · 2026",
+    "kind": "Concept / In Progress · 2026",
     "desc": "แนวคิดระบบรวบรวมและวิเคราะห์ราคาทองคำ ปัจจุบันมีเอกสารและหน้าแนะนำโครงการ",
     "role": "จัดทำกรอบแนวคิดและหน้าอธิบายโครงการด้านการรวบรวมและวิเคราะห์ราคาทองคำ",
     "features": [
@@ -261,10 +279,6 @@
       {
         "src": "https://raw.githubusercontent.com/intasan/Thailand-Flood-Intelligence/main/evidence/readiness-actual.jpg",
         "caption": "หน้า readiness จริง: ตรวจสอบสถานะไม่ได้"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/intasan/Thailand-Flood-Intelligence/main/evidence/test-log-view.jpg",
-        "caption": "ภาพ viewer ของ stdout pytest ที่รันจริง; ไม่ใช่หลักฐานแบบจำลองพร้อมใช้"
       }
     ],
     "analysis": {
@@ -282,7 +296,7 @@
     ],
     "kind": "งานวิเคราะห์ระบบในรายวิชา · 2025",
     "desc": "เอกสารวิเคราะห์ระบบและ SQL schema สำหรับระบบหาบ้านให้สัตว์ พร้อม Source ควบคุมราวตากผ้าอัตโนมัติ",
-    "role": "แปลงโจทย์เป็นผู้ใช้งาน Use Case กระบวนการ และแบบจำลองข้อมูล",
+    "role": "จัดทำและรวบรวม Source งานรายวิชา: SQL schema การรับเลี้ยงสัตว์ เอกสารกระบวนการ และโค้ดควบคุมอุปกรณ์",
     "features": [
       "System analysis document",
       "Animal adoption SQL schema",
@@ -336,12 +350,7 @@
     ],
     "result": "เว็บต้นแบบการจองที่พักและเอกสารวิเคราะห์ระบบ พร้อมการจัดเก็บ SQLite; ยังไม่มีข้อมูลห้องพักจริงจากผู้ประกอบการ",
     "repo": "lodging-booking-system",
-    "images": [
-      {
-        "src": "https://raw.githubusercontent.com/intasan/lodging-booking-system/main/evidence/empty-real-data-actual.jpg",
-        "caption": "Runtime จริงไม่เติม sample rooms; ยังไม่มีข้อมูลห้องจริง"
-      }
-    ]
+    "images": []
   },
   {
     "id": "adoption",
@@ -407,12 +416,7 @@
     ],
     "result": "เว็บต้นแบบสำหรับกระบวนการสั่งเครื่องดื่มและเอกสารระบบ ยังไม่มีข้อมูลธุรกิจหรือธุรกรรมจริงจากผู้ประกอบการ",
     "repo": "energy-drink-vending-machine",
-    "images": [
-      {
-        "src": "https://raw.githubusercontent.com/intasan/energy-drink-vending-machine/main/evidence/empty-real-data-actual.jpg",
-        "caption": "Runtime จริงไม่เติม sample catalog; ยังไม่มีข้อมูลสินค้าจริง"
-      }
-    ]
+    "images": []
   },
   {
     "id": "gesture",
@@ -421,26 +425,24 @@
       "da"
     ],
     "kind": "โครงงาน Machine Learning · 2024",
-    "desc": "ทดลองจำแนกท่าทางมือจากภาพและกระบวนการประมวลผลภาพ",
-    "role": "ออกแบบ Workflow การเก็บภาพ ตรวจจับมือ และจำแนกท่าทาง",
+    "desc": "Source สำหรับอ่านภาพ ปรับขนาด และเตรียม Label จากโฟลเดอร์ ยังไม่มีโมเดลจำแนกหรือผลประเมินที่ยืนยัน",
+    "role": "ศึกษาการเตรียมภาพและ Label สำหรับงานจำแนกท่าทางมือ",
     "features": [
-      "Hand Detection",
-      "Landmarks",
-      "Classification",
-      "Image Processing"
+      "Read images with OpenCV",
+      "Resize to 224 × 224",
+      "Normalize pixels",
+      "Load folder labels"
     ],
     "flow": [
-      "ภาพ / กล้อง",
-      "ประมวลผลภาพ",
-      "ตรวจจับมือ",
-      "Features",
-      "จำแนกท่าทาง"
+      "อ่านโฟลเดอร์ภาพ",
+      "ปรับขนาด",
+      "Normalize",
+      "เตรียมภาพและ Label"
     ],
     "tech": [
       "Python",
       "OpenCV",
-      "NumPy",
-      "Machine Learning"
+      "NumPy"
     ],
     "result": "Source ของโครงการ Machine Learning ยังไม่มีผลประเมินจาก Dataset จริงที่ตรวจยืนยันใน Portfolio นี้",
     "repo": "machine-learning-project",
@@ -453,28 +455,22 @@
       "app"
     ],
     "kind": "โครงงานแอปพลิเคชัน / โค้ดสร้างใหม่",
-    "desc": "แอป Social Media แบบ X-style มี Feed, Profile, Post, Like และ Comment",
-    "role": "พัฒนา Flow การใช้งานและเชื่อมข้อมูลกับ Firebase",
+    "desc": "Flutter UI shell และ Service wrappers ที่สร้างใหม่สำหรับแนวคิด Social App ส่วน Feed, Profile, Post, Like และ Comment ยังเป็นขอบเขตที่ต้องเชื่อมต่อและพัฒนาต่อ",
+    "role": "จัดโครงสร้าง UI shell และแนวทางเชื่อม Service สำหรับต้นแบบที่สร้างใหม่",
     "features": [
-      "Authentication",
-      "Public Feed",
-      "Profile",
-      "Post / Like / Comment",
-      "Audio"
+      "Flutter Material UI shell",
+      "Authentication service wrapper",
+      "Firestore service wrapper"
     ],
     "flow": [
-      "Login",
-      "Feed",
-      "Post",
-      "Interaction",
-      "Profile"
+      "เปิด UI shell",
+      "วาง Service interfaces",
+      "เชื่อมต่อ Backend ในขั้นต่อไป"
     ],
     "tech": [
-      "Flutter",
       "Dart",
-      "Firebase Auth",
-      "Firestore",
-      "Firebase Storage"
+      "Flutter",
+      "Firebase service interfaces"
     ],
     "result": "Source ของแอปต้นแบบ Flutter ที่สร้างใหม่ แสดงขอบเขตงานพัฒนา ไม่อ้างว่าติดตั้งใช้งานจริง",
     "repo": "flutter-social-app",
@@ -488,25 +484,25 @@
       "sa"
     ],
     "kind": "โครงงาน IoT · 2024",
-    "desc": "เชื่อมเซนเซอร์ความชื้น/ฝนกับไมโครคอนโทรลเลอร์และแอปติดตาม",
-    "role": "ออกแบบลำดับการอ่านเซนเซอร์ สั่งมอเตอร์ และควบคุมผ่านแอป",
+    "desc": "Source Arduino อ่านค่าฝนจาก A0 และสั่งมอเตอร์หุบราวเมื่อค่าต่ำกว่า Threshold ยังไม่มีผลทดสอบกับอุปกรณ์จริง",
+    "role": "ออกแบบเงื่อนไขอ่านเซนเซอร์และควบคุมมอเตอร์ใน Source งานรายวิชา",
     "features": [
-      "Rain / Moisture Sensor",
-      "Microcontroller",
-      "Motor",
-      "Mobile Control"
+      "Analog rain-sensor input",
+      "Threshold-based retraction",
+      "Timed motor control",
+      "Serial logging"
     ],
     "flow": [
-      "Sensor",
-      "Detection",
-      "Controller",
-      "Decision",
-      "Motor"
+      "อ่าน A0",
+      "เทียบ Threshold",
+      "ฝนตก: หุบราว",
+      "หยุดมอเตอร์"
     ],
     "tech": [
-      "IoT",
-      "Microcontroller",
-      "Mobile Application"
+      "Arduino",
+      "C++",
+      "Analog sensor",
+      "Motor control"
     ],
     "result": "Source ควบคุมราวตากผ้าด้วย Arduino ใน Repository งานรายวิชา ยังไม่มีหลักฐานทดสอบกับอุปกรณ์ใน Portfolio นี้",
     "repo": "system-analysis-projects",
@@ -604,11 +600,6 @@
     ],
     "result": "Source ของต้นแบบสำรวจอวกาศแบบ Interactive ที่สร้างใหม่ ไม่อ้างว่าเป็นผลิตภัณฑ์เชิงพาณิชย์",
     "repo": "space-explorer-3d",
-    "images": [
-      {
-        "src": "https://raw.githubusercontent.com/intasan/space-explorer-3d/main/evidence/webgl-unavailable-actual.jpg",
-        "caption": "สถานะจริง: สร้าง WebGL context ไม่ได้ ยังไม่ผ่านฉากสามมิติ"
-      }
-    ]
+    "images": []
   }
 ]

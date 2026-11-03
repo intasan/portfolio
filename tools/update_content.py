@@ -7,7 +7,7 @@ def original(p):return subprocess.check_output(['git','-C',str(R),'show',baselin
 def e(s):return html.escape(s,quote=True)
 D=json.loads((R/'projects.json').read_text());P={p['id']:p for p in D};C=json.loads((R/'docs/case-study-content.json').read_text())
 P['yuyenpensuk'].update(title='Yuyenpensuk Website & CMS',desc='เว็บไซต์แสดงสินค้าและบริการของบริษัทอยู่เย็นเป็นสุข วิศวกรรม พร้อม CMS สำหรับทีมงาน ไม่รวม Checkout หรือรับชำระเงินอัตโนมัติ',tech=['Node.js','Express','EJS','JavaScript','JSON file storage','Docker'])
-P['gold-trading'].update(kind='Concept Study · 2026',desc='แนวคิดระบบรวบรวมและวิเคราะห์ราคาทองคำ ปัจจุบันมีเอกสารและหน้าแนะนำโครงการ',role='จัดทำกรอบแนวคิดและหน้าอธิบายโครงการด้านการรวบรวมและวิเคราะห์ราคาทองคำ',features=['Project concept','Data integration scope'],tech=['HTML','Markdown'],flow=['กำหนดโจทย์ข้อมูล','วางกรอบการรวบรวม','วางแนวทางวิเคราะห์'])
+P['gold-trading'].update(kind='Concept / In Progress · 2026',desc='แนวคิดระบบรวบรวมและวิเคราะห์ราคาทองคำ ปัจจุบันมีเอกสารและหน้าแนะนำโครงการ',role='จัดทำกรอบแนวคิดและหน้าอธิบายโครงการด้านการรวบรวมและวิเคราะห์ราคาทองคำ',features=['Project concept','Data integration scope'],tech=['HTML','Markdown'],flow=['กำหนดโจทย์ข้อมูล','วางกรอบการรวบรวม','วางแนวทางวิเคราะห์'])
 P['system-design'].update(desc='เอกสารวิเคราะห์ระบบและ SQL schema สำหรับระบบหาบ้านให้สัตว์ พร้อม Source ควบคุมราวตากผ้าอัตโนมัติ',features=['System analysis document','Animal adoption SQL schema','IoT clothesline source'],tech=['SQL','Database Design','System Analysis','Arduino'],flow=['กำหนดขอบเขต','วิเคราะห์ผู้ใช้และข้อมูล','ออกแบบ schema','จัดทำเอกสาร'])
 for p in D:
  text=C[p['id']]

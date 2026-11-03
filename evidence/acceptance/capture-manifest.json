@@ -1,0 +1,50 @@
+[
+  {
+    "file": "evidence/acceptance/yuyenpensuk/product-detail.jpg",
+    "url": "https://yuyenpensuk.com/products/101",
+    "captured_date": "2026-11-03",
+    "method": "Cloud Browser viewport screenshot, read-only",
+    "sha256": "15bcd8fc054cce1585fad9b4323d1b04c9c3cc9cd1923f5f11768487b11e5f46",
+    "scope": "Rendered UI only; embedded business content not independently validated"
+  },
+  {
+    "file": "evidence/acceptance/yuyenpensuk/products.jpg",
+    "url": "https://yuyenpensuk.com/products",
+    "captured_date": "2026-11-03",
+    "method": "Cloud Browser viewport screenshot, read-only",
+    "sha256": "d1d11084ae1497bd173ad813b4d98c53fe1c23460ac7450bf5bef0d7649d1e7c",
+    "scope": "Rendered UI only; embedded business content not independently validated"
+  },
+  {
+    "file": "evidence/acceptance/yuyenpensuk/home.jpg",
+    "url": "https://yuyenpensuk.com/",
+    "captured_date": "2026-11-03",
+    "method": "Cloud Browser viewport screenshot, read-only",
+    "sha256": "76f58ca792d947cb65a21d75e14c1127cbffc6b9dbb518727893399bb5df432d",
+    "scope": "Rendered UI only; embedded business content not independently validated"
+  },
+  {
+    "file": "evidence/acceptance/yuyenpensuk/admin-login.jpg",
+    "url": "https://admin.yuyenpensuk.com/admin/login",
+    "captured_date": "2026-11-03",
+    "method": "Cloud Browser viewport screenshot, read-only",
+    "sha256": "7d9914a8477c6ae10f52a87f523e587b8dd862dea26081895192db493d840a69",
+    "scope": "Rendered UI only; embedded business content not independently validated"
+  },
+  {
+    "file": "evidence/acceptance/yuyenpensuk/projects.jpg",
+    "url": "https://yuyenpensuk.com/projects",
+    "captured_date": "2026-11-03",
+    "method": "Cloud Browser viewport screenshot, read-only",
+    "sha256": "9d65a9308d2f8afe8677ba0aaa80ff3c781750c5090bd0f475e541a279fbc306",
+    "scope": "Rendered UI only; embedded business content not independently validated"
+  },
+  {
+    "file": "evidence/acceptance/yuyenpensuk/services.jpg",
+    "url": "https://yuyenpensuk.com/services",
+    "captured_date": "2026-11-03",
+    "method": "Cloud Browser viewport screenshot, read-only",
+    "sha256": "42134223e50e891dc3dee16ce2e1f94701a54212fd612fa0e929d4a6e269e3ea",
+    "scope": "Rendered UI only; embedded business content not independently validated"
+  }
+]
