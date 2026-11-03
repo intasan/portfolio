@@ -57,6 +57,7 @@ s=s.replace('SQL · Python · Pandas · Data Cleaning · Data Validation · Visu
 s=s.replace('ศึกษาสาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน อยู่ระหว่างยืนยันสถานะสำเร็จการศึกษาและเอกสารทางการ พร้อมเริ่มงานเดือนพฤศจิกายน 2569','สำเร็จการศึกษาสาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน พร้อมเริ่มงานเดือนพฤศจิกายน 2569')
 s=s.replace('เครื่องมือที่ใช้: Figma, Draw.io, Postman, Git / GitHub, VS Code, PowerPoint และ Generative AI สำหรับช่วยค้นคว้าและจัดทำงาน โดยตรวจสอบผลก่อนใช้','ใช้ GitHub, Airflow, Docker และ ChatGPT Work ช่วยพัฒนาและจัดทำเอกสาร โดยตรวจ Source Code และผลลัพธ์ก่อนนำเสนอ')
 # No structural edits to navigation, hero, effects or motion controls.
+s=s.replace('src="projects.js"','src="projects.js?v=20261103-content"')
 (R/'index.html').write_text(s)
 # Preserve full assessment, repair its content link and metadata.
 s=original('ppe-case-study.html').replace('index.html#project=ppe','case-studies/ppe.html')
