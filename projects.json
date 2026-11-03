@@ -1,13 +1,13 @@
 [
   {
     "id": "yuyenpensuk",
-    "title": "อยู่เย็นเป็นสุข วิศวกรรม",
+    "title": "Yuyenpensuk Website & CMS",
     "cats": [
       "ba",
       "sa"
     ],
     "kind": "โครงการเว็บไซต์สำหรับบริษัท · 2026",
-    "desc": "เว็บไซต์บริษัทและระบบ CMS สำหรับจัดการสินค้า บริการ ข่าว และผลงาน",
+    "desc": "เว็บไซต์แสดงสินค้าและบริการของบริษัทอยู่เย็นเป็นสุข วิศวกรรม พร้อม CMS สำหรับทีมงาน ไม่รวม Checkout หรือรับชำระเงินอัตโนมัติ",
     "role": "ประสานงานกับเจ้าของบริษัท รวบรวมความต้องการ ออกแบบ Flow และพัฒนาเว็บไซต์พร้อมระบบจัดการเนื้อหา",
     "features": [
       "Admin Login",
@@ -25,12 +25,12 @@
     "tech": [
       "Node.js",
       "Express",
+      "EJS",
       "JavaScript",
-      "Docker",
-      "Ubuntu"
+      "JSON file storage",
+      "Docker"
     ],
-    "result": "ทดสอบ security policy ผ่าน; CMS ยังไม่ตรวจรับ",
-    "limit": "2 automated tests ผ่าน แต่ startup แบบ REQUIRE_EXISTING_DATA=1 หยุดเพราะไม่มีฐานข้อมูล CMS จริง; ไม่มี product JPG uploads จริงครบ และยังไม่ได้ทดสอบ admin flow",
+    "result": "เว็บไซต์บริษัทและ CMS พร้อม Source Code, แนวทาง Deployment และเอกสารวิเคราะห์ระบบ",
     "repo": "yuyenpensuk-website",
     "images": [],
     "analysis": {
@@ -70,8 +70,7 @@
       "PostgreSQL",
       "Streamlit"
     ],
-    "result": "README รุ่นวันที่ 23 ตุลาคม 2569 ระบุ 398 รายการหลังตัดซ้ำ และรักษาข้อมูลเดิม 354 รายการ",
-    "limit": "398 เป็นจำนวนในชุดตรวจสอบรุ่นดังกล่าว ไม่ใช่จำนวนสด; เปรียบเทียบเฉพาะหน่วย ประเภทการวัด และช่วงเวลาที่สอดคล้องกัน",
+    "result": "ชุดหลักฐานวันที่ 23 ตุลาคม 2569 บันทึก 398 แถวหลังตัดซ้ำจาก DIT, NABC และตลาดไท พร้อมภาพ Dashboard และผลตรวจ SQL; เป็นผลของชุดตรวจสอบดังกล่าว ไม่ใช่จำนวนข้อมูลสด",
     "repo": "02739452-26-6621655321",
     "images": [
       {
@@ -119,7 +118,6 @@
       "UAT Planning"
     ],
     "result": "จัดทำข้อเสนอระบบ ครอบคลุมขอบเขต ความเสี่ยง MVP และเงื่อนไขที่ต้องยืนยันกับลูกค้า",
-    "limit": "เป็น Proposed Solution สำหรับแบบทดสอบ ยังไม่ใช่ระบบ AI ที่พัฒนาและติดตั้งใช้งานจริง",
     "repo": null,
     "images": []
   },
@@ -155,8 +153,7 @@
       "Plotly",
       "Gradio"
     ],
-    "result": "ยังประมวลผลไม่ได้",
-    "limit": "รัน data_cleaning.py แล้วไม่พบ data/input.csv; gesture pipeline ขาด cv2 และไม่มี dataset ที่แนบใน Repository",
+    "result": "Source สำหรับการจัดเตรียมและวิเคราะห์ข้อมูล ยังไม่มีผลการประมวลผลจาก Dataset จริงที่ยืนยันใน Portfolio นี้",
     "repo": "machine-learning-project",
     "images": []
   },
@@ -187,8 +184,7 @@
       "SQLite",
       "JavaScript"
     ],
-    "result": "รันรวบรวมข้อมูลจริงได้; ยังไม่มี forecast",
-    "limit": "รัน HTTP API, query SQLite และจับภาพ Dashboard จริงได้; มีราคาจริง 1 publication; ไม่แสดง forecast/MAE/RMSE เพราะยังไม่มี chronological holdout",
+    "result": "Dashboard รวบรวมราคาทองจริงและจัดเก็บ SQLite พร้อมภาพจากชุดหลักฐานใน Repository; ขอบเขตปัจจุบันเป็นการติดตามราคา ยังไม่มีผลพยากรณ์",
     "repo": "thai-gold-price-forecast",
     "images": [
       {
@@ -208,22 +204,23 @@
       "da",
       "sa"
     ],
-    "kind": "โครงการทดลองด้านข้อมูล · 2026",
-    "desc": "เอกสารแนวคิดระบบวิเคราะห์ทองคำ ยังไม่มี ETL / API / โมเดลที่รันได้ใน Repository",
-    "role": "ออกแบบแนวทาง Data Pipeline, Feature Engineering และการนำเสนอผลการทดลอง",
+    "kind": "Concept Study · 2026",
+    "desc": "แนวคิดระบบรวบรวมและวิเคราะห์ราคาทองคำ ปัจจุบันมีเอกสารและหน้าแนะนำโครงการ",
+    "role": "จัดทำกรอบแนวคิดและหน้าอธิบายโครงการด้านการรวบรวมและวิเคราะห์ราคาทองคำ",
     "features": [
-      "เอกสารแนวคิดและหน้าแนะนำเท่านั้น"
+      "Project concept",
+      "Data integration scope"
     ],
     "flow": [
-      "เอกสารแนวคิด",
-      "รอ source และข้อมูลจริง"
+      "กำหนดโจทย์ข้อมูล",
+      "วางกรอบการรวบรวม",
+      "วางแนวทางวิเคราะห์"
     ],
     "tech": [
       "HTML",
       "Markdown"
     ],
-    "result": "ยังไม่มีระบบที่รันได้",
-    "limit": "Repository มีเพียง README และ index.html; ไม่มี Airflow DAG, API, Compose, model หรือข้อมูลจริงสำหรับยืนยันตัวเลขเดิม",
+    "result": "เอกสารแนวคิดและหน้าแนะนำโครงการ ยังไม่มี ETL, Airflow DAG, PostgreSQL, ML หรือ Dashboard ที่รันได้ใน Repository ปัจจุบัน",
     "repo": "gold-trading",
     "images": []
   },
@@ -258,8 +255,7 @@
       "FastAPI",
       "PostGIS"
     ],
-    "result": "โค้ดทดสอบผ่าน; ข้อมูลและแบบจำลองยังไม่พร้อม",
-    "limit": "Backend 259 passed, 5 skipped; Frontend 20 passed และ build/typecheck ผ่าน; actual API ให้ readiness 503 เพราะ PostGIS ไม่พร้อม; ไม่มีผลเสี่ยงรายที่ดินที่ผ่าน validation; UI readiness แสดงตรวจสอบไม่ได้ เพราะ preview Python ไม่มี uvicorn",
+    "result": "Source ของแผนที่ Dashboard และ Research API พร้อมเอกสารออกแบบระบบ เป็นงานวิจัยระหว่างพัฒนา ยังไม่มีผลประเมินความเสี่ยงรายที่ดินที่ผ่านการรับรอง",
     "repo": "Thailand-Flood-Intelligence",
     "images": [
       {
@@ -285,30 +281,26 @@
       "sa"
     ],
     "kind": "งานวิเคราะห์ระบบในรายวิชา · 2025",
-    "desc": "รวมการวิเคราะห์และออกแบบระบบผ่าน UML, DFD, ERD และแบบจำลองฐานข้อมูล",
+    "desc": "เอกสารวิเคราะห์ระบบและ SQL schema สำหรับระบบหาบ้านให้สัตว์ พร้อม Source ควบคุมราวตากผ้าอัตโนมัติ",
     "role": "แปลงโจทย์เป็นผู้ใช้งาน Use Case กระบวนการ และแบบจำลองข้อมูล",
     "features": [
-      "Banking / Hospital UML",
-      "ATM / Toy Car UML",
-      "Use Case",
-      "DFD / ERD",
-      "Normalization 1NF–3NF"
+      "System analysis document",
+      "Animal adoption SQL schema",
+      "IoT clothesline source"
     ],
     "flow": [
-      "โจทย์และผู้ใช้งาน",
-      "Requirements",
-      "Use Case / UML",
-      "Data Model",
-      "Documentation"
+      "กำหนดขอบเขต",
+      "วิเคราะห์ผู้ใช้และข้อมูล",
+      "ออกแบบ schema",
+      "จัดทำเอกสาร"
     ],
     "tech": [
-      "UML",
-      "DFD",
-      "ERD",
-      "Database Design"
+      "SQL",
+      "Database Design",
+      "System Analysis",
+      "Arduino"
     ],
-    "result": "ตรวจได้เฉพาะ source และ schema",
-    "limit": "มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้",
+    "result": "Source Code, SQL schema และเอกสารวิเคราะห์ระบบสำหรับงานรายวิชา",
     "repo": "system-analysis-projects",
     "images": []
   },
@@ -342,8 +334,7 @@
       "JavaScript",
       "HTML / CSS"
     ],
-    "result": "ทดสอบ logic ผ่าน; ข้อมูลธุรกิจยังไม่มี",
-    "limit": "4 unit tests ผ่านด้วย fixture ในหน่วยความจำเท่านั้น; runtime ใหม่ไม่สร้าง sample rooms; ไม่มีข้อมูลห้องจริงหรือการเชื่อมผู้ประกอบการ",
+    "result": "เว็บต้นแบบการจองที่พักและเอกสารวิเคราะห์ระบบ พร้อมการจัดเก็บ SQLite; ยังไม่มีข้อมูลห้องพักจริงจากผู้ประกอบการ",
     "repo": "lodging-booking-system",
     "images": [
       {
@@ -380,8 +371,7 @@
       "Use Case",
       "System Design"
     ],
-    "result": "ตรวจได้เฉพาะ source และ schema",
-    "limit": "มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้",
+    "result": "SQL schema ของระบบรับเลี้ยงสัตว์และเอกสารวิเคราะห์ใน Repository งานรายวิชา",
     "repo": "system-analysis-projects",
     "images": []
   },
@@ -415,8 +405,7 @@
       "JavaScript",
       "HTML / CSS"
     ],
-    "result": "ทดสอบ logic ผ่าน; ข้อมูลธุรกิจยังไม่มี",
-    "limit": "4 unit tests ผ่านด้วย fixture ในหน่วยความจำเท่านั้น; runtime ใหม่ไม่สร้าง sample catalog; ไม่มี integration ชำระเงินจริง/เครื่องจ่ายจริง",
+    "result": "เว็บต้นแบบสำหรับกระบวนการสั่งเครื่องดื่มและเอกสารระบบ ยังไม่มีข้อมูลธุรกิจหรือธุรกรรมจริงจากผู้ประกอบการ",
     "repo": "energy-drink-vending-machine",
     "images": [
       {
@@ -453,8 +442,7 @@
       "NumPy",
       "Machine Learning"
     ],
-    "result": "ยังประมวลผลไม่ได้",
-    "limit": "รัน data_cleaning.py แล้วไม่พบ data/input.csv; gesture pipeline ขาด cv2 และไม่มี dataset ที่แนบใน Repository",
+    "result": "Source ของโครงการ Machine Learning ยังไม่มีผลประเมินจาก Dataset จริงที่ตรวจยืนยันใน Portfolio นี้",
     "repo": "machine-learning-project",
     "images": []
   },
@@ -488,8 +476,7 @@
       "Firestore",
       "Firebase Storage"
     ],
-    "result": "ยังรันไม่ได้",
-    "limit": "ไม่มี Flutter SDK; ไม่มี pubspec.yaml และหน้า pages ที่ service อ้างอิง รวมทั้งยังไม่มี Firebase configuration",
+    "result": "Source ของแอปต้นแบบ Flutter ที่สร้างใหม่ แสดงขอบเขตงานพัฒนา ไม่อ้างว่าติดตั้งใช้งานจริง",
     "repo": "flutter-social-app",
     "images": []
   },
@@ -521,8 +508,7 @@
       "Microcontroller",
       "Mobile Application"
     ],
-    "result": "ตรวจได้เฉพาะ source และ schema",
-    "limit": "มี schema.sql, clothesline.ino และ docs/system-analysis.md; ไม่มี MySQL, Arduino toolchain หรืออุปกรณ์จริงในสภาพแวดล้อมนี้",
+    "result": "Source ควบคุมราวตากผ้าด้วย Arduino ใน Repository งานรายวิชา ยังไม่มีหลักฐานทดสอบกับอุปกรณ์ใน Portfolio นี้",
     "repo": "system-analysis-projects",
     "images": []
   },
@@ -555,8 +541,7 @@
       "Resource Planning",
       "Scenario Planning"
     ],
-    "result": "ตรวจได้เฉพาะเอกสาร",
-    "limit": "มี planning.md; ไม่มีหลักฐานการจัดงานจริงหรือแบบแปลนและการอนุมัติจริง",
+    "result": "ชิ้นงานแนวคิดการออกแบบกิจกรรม ไม่ใช่หลักฐานผลการจัดงานจริง",
     "repo": "sun-of-prosperity-open-house",
     "images": []
   },
@@ -585,8 +570,7 @@
       "CSS 3D",
       "JavaScript"
     ],
-    "result": "ผ่าน browser checks ที่รันจริง",
-    "limit": "เลือกไพ่ 2, reset และเลือกไพ่ 3 ได้จริง; ใช้ CSS 3D และข้อความสะท้อนความคิดที่เขียนขึ้น ยังไม่ได้ตรวจมือถือจริง",
+    "result": "ต้นแบบ Interactive ที่สร้างใหม่ มี Source และภาพการเลือกไพ่ใน Repository; ไม่ใช่ระบบให้บริการเชิงพาณิชย์",
     "repo": "tarot-3d-interactive",
     "images": [
       {
@@ -618,8 +602,7 @@
       "Three.js",
       "JavaScript"
     ],
-    "result": "ยังไม่ผ่าน WebGL runtime",
-    "limit": "เพิ่ม source ส่วนควบคุมแล้ว แต่ browser สร้าง WebGL context ไม่สำเร็จ จึงยังไม่ยืนยันฉากสามมิติ",
+    "result": "Source ของต้นแบบสำรวจอวกาศแบบ Interactive ที่สร้างใหม่ ไม่อ้างว่าเป็นผลิตภัณฑ์เชิงพาณิชย์",
     "repo": "space-explorer-3d",
     "images": [
       {

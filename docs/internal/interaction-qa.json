@@ -1,0 +1,17 @@
+{
+  "environment": "Chromium preview",
+  "checks": {
+    "project_dialog_opens": true,
+    "escape_closes_dialog": true,
+    "PostgreSQL_search_results": 1,
+    "unknown_query_empty_state": true,
+    "BA_filter_results": 7,
+    "mobile_menu_opens_390px": true,
+    "hero_preserved": true,
+    "site_console_errors_observed": 0
+  },
+  "notes": [
+    "Browser-extension metadata errors excluded; they originate from chrome-extension://, not the site.",
+    "No new business-system runtime, CRUD or ML test claimed."
+  ]
+}
