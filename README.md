@@ -33,7 +33,7 @@ Edit `projects.json` and run:
 python3 tools/build_project_pages.py
 ```
 
-Update featured editorial copy in `index.html` when its featured project's scope changes. Update the website and CV together when education, experience, availability or contact details change. Keep source-status disclosures: several legacy repositories contain reconstructed examples rather than complete original archives. Do not invent project screenshots, performance figures, employer names or internship dates.
+Update featured editorial copy in `index.html` when its featured project's scope changes. Update the website and CV together when education, experience, availability or contact details change. Keep project descriptions accurate and distinguish coursework, prototypes, client work and deployed systems. Do not invent project screenshots, performance figures, employer names or internship dates. Technical audit records are maintained separately from the public portfolio presentation.
 
 ## Hosting
 
