@@ -44,3 +44,7 @@ Release c2b3aeb2df4b5fe482919074d79dcc797fbf7212: GitHub Pages workflow 41673566
 Production interactions verified: mobile menu; Yuyenpensuk project dialog; real-image gallery and lightbox; close by Escape; MotoInsight search returns the corrected scope; unmatched search shows empty state; BA filter shows 7 projects. No site-origin console errors observed in the inspected tab. Contact links remain mailto/tel/GitHub; no message or call was sent. Three role-specific PDF downloads completed and matched source SHA-256. No audit-report link is present in public navigation.
 
 Evidence: acceptance-browser-qa.json, acceptance-download-qa.json, static-qa.json, external-link-qa.json, acceptance-design-preservation.json. A final publication includes this record plus canonical metadata and no-JavaScript fallback-label corrections; all visual sources remain unchanged.
+
+## Final link correction
+
+An additional production HTTP sweep checked 90 distinct same-site resources and found one real broken link: the KU-EXITE PDF URL used a percent-encoded Thai filename whose stored filename contains literal percent characters. Corrected only the href by percent-escaping the existing filename. The corrected URL returned HTTP 200 and a %PDF header. The original certificate file and content are unchanged. See acceptance-http-links.json for the initial 404 and corrected URL.

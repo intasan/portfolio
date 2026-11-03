@@ -11,3 +11,5 @@
 - Three one-page PDFs rendered and visually inspected; embedded DejaVu Sans, no clipping or missing English glyphs. PDFs use English; Thai identity is provided on the linked CV page.
 - Canonical files: assets/resumes/Panupong_Intasan_BA.pdf, Panupong_Intasan_SA.pdf, Panupong_Intasan_Data_Analyst.pdf.
 - No full automated tagged-PDF accessibility certification.
+
+Certificate-link follow-up: corrected the existing KU-EXITE PDF URL; HTTP 200 and PDF header verified. Three role-resume files were unaffected.
