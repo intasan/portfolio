@@ -1,10 +1,10 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GoldSense Thai Gold Analytics Analysis Documentation</title><meta name="description" content="Requirement Data Flow Data Model Workflow and UAT for GoldSense Thai Gold Analytics"><style>:root{font-family:Arial,Tahoma,sans-serif;color:#202a32;background:#f4f5f5;line-height:1.8}*{box-sizing:border-box}body{margin:0}header{padding:20px max(24px,calc((100vw - 1120px)/2));background:#172d3d;color:white;display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap}header a{color:white}main{max-width:1180px;margin:30px auto;padding:40px;background:white}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:22px;margin:45px 0 18px;padding-top:12px;color:#172d3d}p{margin:15px 0}a{color:#225b7d;text-underline-offset:3px}li{margin:9px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.7}th,td{border:1px solid #d5dce0;padding:12px 14px;text-align:left;vertical-align:top}th{background:#edf1f3;color:#172d3d}tr:nth-child(even) td{background:#fbfcfd}.table-wrap{overflow:auto;margin:20px 0}img{display:block;width:100%;height:auto;border:1px solid #dde3e7;margin:25px 0}code{background:#eef1f3;padding:2px 4px;overflow-wrap:anywhere}nav{padding:20px 0;display:flex;gap:15px;flex-wrap:wrap;font-size:12px;border-bottom:1px solid #dde3e7}footer{max-width:1120px;margin:auto;padding:20px 0 40px;color:#637480;font-size:12px}.meta{color:#637480;font-size:12px}button{font:inherit;padding:8px 12px;background:white;border:1px solid #aebdc7;cursor:pointer}@media(max-width:700px){main{margin:0;padding:25px 18px}h1{font-size:24px}h2{font-size:20px}table{min-width:680px}header{padding:18px}footer{padding:20px}}@media print{@page{size:A4 landscape;margin:15mm}header,nav,.controls{display:none}body{background:white;font-size:10pt}main{margin:0;padding:0;max-width:none}h1{font-size:22pt}h2{font-size:15pt;break-after:avoid;margin-top:25px}img{max-height:160mm;object-fit:contain;break-inside:avoid}table{font-size:8pt;min-width:0}tr{break-inside:avoid}thead{display:table-header-group}.table-wrap{overflow:visible}a{color:inherit}footer{display:none}}</style></head><body><header><b>Panupong Intasan · System Analysis</b><a href="https://intasan.github.io/portfolio/">กลับ Portfolio ↗</a><a href="https://github.com/intasan/thai-gold-price-forecast/tree/main/docs/analysis">เอกสารและไฟล์ต้นฉบับ GitHub ↗</a></header><main><p class="meta">ANALYSIS DOCUMENT 1.0 · 30 OCTOBER 2026 · SOURCE ba3ecf50</p><nav aria-label="สารบัญเอกสาร"><a href="#section-1">1 เป้าหมาย ผู้ใช้งาน และขอบเขต</a><a href="#section-2">2 วิธีเก็บและยืนยันความต้องการ</a><a href="#section-3">3 Functional Requirements และเกณฑ์ยอมรับ</a><a href="#section-4">4 Business Rules</a><a href="#section-5">5 Non Functional Requirements</a><a href="#section-6">6 Context Diagram</a><a href="#section-7">7 Data Flow Diagram และทะเบียนข้อมูล</a><a href="#section-8">8 Workflow</a><a href="#section-9">9 Data Model และ Data Dictionary</a><a href="#section-10">10 UAT และ Requirement Traceability</a><a href="#section-11">11 ข้อจำกัดและความเสี่ยง</a><a href="#section-12">12 คำถามที่ต้องยืนยันก่อนขยายระบบ</a><a href="#section-13">13 Source Baseline และประวัติเอกสาร</a></nav><h1>GoldSense Thai Gold Analytics เอกสารวิเคราะห์ความต้องการและออกแบบระบบ</h1>
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GoldSense Thai Gold Analytics Analysis Documentation</title><meta name="description" content="Requirement Data Flow Data Model Workflow and UAT for GoldSense Thai Gold Analytics"><style>:root{font-family:Arial,Tahoma,sans-serif;color:#202a32;background:#f4f5f5;line-height:1.8}*{box-sizing:border-box}body{margin:0}header{padding:20px max(24px,calc((100vw - 1120px)/2));background:#172d3d;color:white;display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap}header a{color:white}main{max-width:1180px;margin:30px auto;padding:40px;background:white}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:22px;margin:45px 0 18px;padding-top:12px;color:#172d3d}p{margin:15px 0}a{color:#225b7d;text-underline-offset:3px}li{margin:9px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.7}th,td{border:1px solid #d5dce0;padding:12px 14px;text-align:left;vertical-align:top}th{background:#edf1f3;color:#172d3d}tr:nth-child(even) td{background:#fbfcfd}.table-wrap{overflow:auto;margin:20px 0}img{display:block;width:100%;height:auto;border:1px solid #dde3e7;margin:25px 0}code{background:#eef1f3;padding:2px 4px;overflow-wrap:anywhere}nav{padding:20px 0;display:flex;gap:15px;flex-wrap:wrap;font-size:12px;border-bottom:1px solid #dde3e7}footer{max-width:1120px;margin:auto;padding:20px 0 40px;color:#637480;font-size:12px}.meta{color:#637480;font-size:12px}button{font:inherit;padding:8px 12px;background:white;border:1px solid #aebdc7;cursor:pointer}@media(max-width:700px){main{margin:0;padding:25px 18px}h1{font-size:24px}h2{font-size:20px}table{min-width:680px}header{padding:18px}footer{padding:20px}}@media print{@page{size:A4 landscape;margin:15mm}header,nav,.controls{display:none}body{background:white;font-size:10pt}main{margin:0;padding:0;max-width:none}h1{font-size:22pt}h2{font-size:15pt;break-after:avoid;margin-top:25px}img{max-height:160mm;object-fit:contain;break-inside:avoid}table{font-size:8pt;min-width:0}tr{break-inside:avoid}thead{display:table-header-group}.table-wrap{overflow:visible}a{color:inherit}footer{display:none}}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500&display=swap"><link rel="stylesheet" href="../../engine/maximal.css"></head><body class="fx-subpage"><header><b>Panupong Intasan · System Analysis</b><a href="https://intasan.github.io/portfolio/">กลับ Portfolio ↗</a><a href="https://github.com/intasan/thai-gold-price-forecast/tree/main/docs/analysis">เอกสารและไฟล์ต้นฉบับ GitHub ↗</a></header><main><p class="meta">ANALYSIS DOCUMENT 1.0 · 30 OCTOBER 2026 · SOURCE ba3ecf50</p><nav aria-label="สารบัญเอกสาร"><a href="#section-1">1 เป้าหมาย ผู้ใช้งาน และขอบเขต</a><a href="#section-2">2 วิธีเก็บและยืนยันความต้องการ</a><a href="#section-3">3 Functional Requirements และเกณฑ์ยอมรับ</a><a href="#section-4">4 Business Rules</a><a href="#section-5">5 Non Functional Requirements</a><a href="#section-6">6 Context Diagram</a><a href="#section-7">7 Data Flow Diagram และทะเบียนข้อมูล</a><a href="#section-8">8 Workflow</a><a href="#section-9">9 Data Model และ Data Dictionary</a><a href="#section-10">10 UAT และ Requirement Traceability</a><a href="#section-11">11 ข้อจำกัดและความเสี่ยง</a><a href="#section-12">12 คำถามที่ต้องยืนยันก่อนขยายระบบ</a><a href="#section-13">13 Source Baseline และประวัติเอกสาร</a></nav><h1>GoldSense Thai Gold Analytics เอกสารวิเคราะห์ความต้องการและออกแบบระบบ</h1>
 <p>รุ่นเอกสาร 1.0 · วันที่ 30 October 2026 · ผู้จัดทำ Panupong Intasan โดยใช้ AI assistance ใน ChatGPT Work</p>
 <p>รวบรวม snapshot ราคาทองคำจาก API เก็บ SQLite และแสดงราคาล่าสุด/ข้อมูลย้อนหลัง พร้อม linear regression ตัวอย่างเพื่อการศึกษา การประเมินปัจจุบันยังใช้ข้อมูลชุดเดียวกับการ fit จึงไม่ใช่หลักฐานความแม่นยำกับข้อมูลอนาคต</p>
 <p><strong>สถานะเอกสาร:</strong> จัดทำใหม่จากการอ่านโค้ด ณ commit <code>ba3ecf504e24fc2cd7a2983aa0bfca4c36527d7f</code> เพื่ออธิบายระบบและใช้ตรวจรับ ไม่ใช่บันทึกการสัมภาษณ์หรือหลักฐานว่าผู้มีส่วนได้ส่วนเสียอนุมัติ Requirement แล้ว รายการที่ยังต้องตัดสินใจอยู่ในหัวข้อคำถามยืนยัน</p>
 <p><a href="https://intasan.github.io/portfolio/analysis/gold-thai/index.html">อ่านฉบับเว็บบน Portfolio</a> · <a href="index.html">ไฟล์ HTML</a> · <a href="https://github.com/intasan/thai-gold-price-forecast/tree/main/docs/analysis/diagrams">Diagram source</a></p>
 <h2 id="section-1">1 เป้าหมาย ผู้ใช้งาน และขอบเขต</h2>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>ผู้เกี่ยวข้อง</th>
@@ -23,7 +23,7 @@
 <td>ผู้ดูแลระบบ</td>
 <td>กำหนด endpoint และ DB_FILE ดูแลไฟล์ฐานข้อมูลและการเชื่อมต่อ</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <p><strong>อยู่ในขอบเขต:</strong> Fetch ล่าสุดทุก 60 วินาทีและเมื่อเรียก latest; เก็บ snapshots, history endpoint และสถิติ regression</p>
 <p><strong>อยู่นอกขอบเขต:</strong> ระบบซื้อขาย การแนะนำลงทุน ข้อมูลย้อนหลัง 1 ปีที่เติมอัตโนมัติ และโมเดลที่ผ่านการทดสอบนอกชุดฝึก</p>
 <h2 id="section-2">2 วิธีเก็บและยืนยันความต้องการ</h2>
@@ -31,7 +31,7 @@
 <p>กระบวนการยืนยันที่เสนอคือให้ผู้ใช้งานหลักทบทวน scope และ Business Rules จากนั้นเดินผ่าน scenario ปกติและข้อผิดพลาด บันทึกคำตอบพร้อมผู้ตัดสินใจ แล้วปรับ version ของ Requirement และ UAT ก่อนรับรองการใช้งานจริง</p>
 <h2 id="section-3">3 Functional Requirements และเกณฑ์ยอมรับ</h2>
 <p>ทุกแถวต่อไปนี้เป็น <strong>As implemented จากโค้ด</strong> คอลัมน์หลักฐานแยกสิ่งที่มีการทดสอบเดิมกับสิ่งที่เพียงพบใน source การจัดทำเอกสารไม่ได้ทำให้ผลทดสอบที่ยังรออยู่กลายเป็นผ่าน</p>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>รหัส</th>
@@ -111,7 +111,7 @@
 <td>server.js</td>
 <td>พบในโค้ด ไม่ตรวจ upstream/DB แบบ readiness</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <h2 id="section-4">4 Business Rules</h2>
 <ol>
 <li>observed_at เป็นเวลาที่ระบบดึง ไม่ใช่เวลาประกาศจาก upstream</li>
@@ -121,7 +121,7 @@
 <li>หากมีข้อมูลเก่า last ต้องแสดงเวลาประกอบ ไม่ควรตีความว่าเป็นข้อมูลสด</li>
 </ol>
 <h2 id="section-5">5 Non Functional Requirements</h2>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>รหัส</th>
@@ -159,14 +159,14 @@
 <td>Recovery</td>
 <td>เสนอให้ทดสอบสำรองและกู้คืนข้อมูลพร้อมไฟล์ที่สัมพันธ์กัน; RPO/RTO ยังต้องตกลง ไม่กำหนดตัวเลขแทนผู้ใช้</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <h2 id="section-6">6 Context Diagram</h2>
 <p><img src="diagrams/context.svg" alt="Context Diagram"></p>
 <p>อ่านร่วมกับ <a href="diagrams/context.mmd">Mermaid context source</a> ซึ่งแสดงข้อมูลขาเข้าและขาออกแยกทิศทาง Context Diagram กำหนดขอบเขตระบบทั้งก้อน ไม่แสดง data store ภายใน</p>
 <h2 id="section-7">7 Data Flow Diagram และทะเบียนข้อมูล</h2>
 <p><img src="diagrams/data-flow.svg" alt="Data flow process overview"></p>
 <p>ภาพ SVG เป็น process overview แบบย่อ ส่วน <a href="diagrams/data-flow.mmd">DFD Mermaid source</a> และทะเบียนด้านล่างแสดงทิศทาง request/response และ data store อย่างละเอียด ห้ามตีความลูกศรเป็นลำดับเวลาดำเนินงานอย่างเดียว</p>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>Flow</th>
@@ -211,7 +211,7 @@
 <td>อ่าน latest และ non-null sell series</td>
 <td>rows ที่เรียง observed_at</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <h2 id="section-8">8 Workflow</h2>
 <p><img src="diagrams/workflow.svg" alt="Workflow"></p>
 <ol>
@@ -225,7 +225,7 @@
 <h2 id="section-9">9 Data Model และ Data Dictionary</h2>
 <p><img src="diagrams/data-model.svg" alt="Data model"></p>
 <p>แบบจำลองแสดง core entities ตาม schema ที่ตรวจอ่าน ความสัมพันธ์ที่แอปคาดหวังอาจเข้มกว่าข้อจำกัด nullable ของฐานข้อมูล จึงต้องอ่าน DDL และ validation ประกอบ</p>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>Entity หรือ data store</th>
@@ -236,13 +236,13 @@
 <td>GOLD_PRICES</td>
 <td>id INTEGER PK; source TEXT NOT NULL; observed_at TEXT NOT NULL; update_date / update_time; goldbar_buy / goldbar_sell REAL; ornament_buy / ornament_sell REAL; spot / thb / change REAL; UNIQUE source + observed_at</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <p>มีตารางหลักเดียว ไม่มีความสัมพันธ์ระหว่างตาราง; UNIQUE ใช้ source กับ observed_at ไม่ใช่ upstream announcement ID</p>
 <p>Single table model ไม่มีความสัมพันธ์ระหว่างตาราง</p>
 <p><a href="diagrams/data-model.mmd">Mermaid data model source</a></p>
 <h2 id="section-10">10 UAT และ Requirement Traceability</h2>
 <p>ตารางนี้เป็น test design และ mapping กับหลักฐานที่มี การผ่าน unit/API test ไม่เท่ากับผู้ใช้ปลายทางลงนาม UAT</p>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>Test ID</th>
@@ -294,7 +294,7 @@
 <td>แจ้ง unavailable หรือเวลา last ตามจริง</td>
 <td>รอตรวจรับ</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <p><strong>ผู้ตรวจรับ:</strong> ยังไม่กำหนด · <strong>วันที่ตรวจรับกับผู้ใช้:</strong> ยังไม่ดำเนินการในรอบเอกสารนี้ · <strong>ผลลงนาม:</strong> ยังไม่มี</p>
 <h2 id="section-11">11 ข้อจำกัดและความเสี่ยง</h2>
 <ul>
@@ -317,7 +317,7 @@
 <li><a href="https://github.com/intasan/thai-gold-price-forecast/blob/ba3ecf504e24fc2cd7a2983aa0bfca4c36527d7f/package.json">package.json</a></li>
 <li><a href="https://github.com/intasan/thai-gold-price-forecast/blob/ba3ecf504e24fc2cd7a2983aa0bfca4c36527d7f/README.md">README.md</a></li>
 </ul>
-<div class="table-wrap"><table>
+<div class="table-wrap"><div class="fx-table-wrap"><table>
 <thead>
 <tr>
 <th>Version</th>
@@ -330,6 +330,6 @@
 <td>30 October 2026</td>
 <td>จัดทำ requirement catalogue, data flow register, diagrams, data dictionary และ UAT traceability จาก source baseline</td>
 </tr>
-</tbody></table></div>
+</tbody></table></div></div>
 <p>เอกสารวิเคราะห์และไดอะแกรมเป็น deliverable ใหม่ ไม่ใช่ภาพหน้าจอหรือหลักฐานผลการทำงานที่ยังไม่ได้ทดสอบ ไม่มีการอ่านหรือแก้ repository ที่ผู้ใช้ระบุให้ยกเว้น</p>
 </main><footer>เอกสารวิเคราะห์จาก source baseline ไม่ใช่บันทึกสัมภาษณ์หรือการรับรอง UAT ที่ยังไม่ได้ดำเนินการ</footer></body></html>
