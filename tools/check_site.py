@@ -29,7 +29,8 @@ for f,p in parsed.items():
   if u.scheme or u.netloc:
    if u.scheme in ['http','https']:external.add(ref)
    continue
-  target=(f.parent/u.path).resolve() if u.path else f
+  local_path=unquote(u.path) if '%25' in u.path.lower() else u.path
+  target=(f.parent/local_path).resolve() if local_path else f
   if target.is_dir():target=target/'index.html'
   # Certificate filename contains literal percent escapes.
   if not target.exists():target=(f.parent/unquote(u.path)).resolve()
