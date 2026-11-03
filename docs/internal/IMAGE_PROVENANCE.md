@@ -48,3 +48,7 @@
 - Source database.js in Yuyenpensuk contains Pexels seed-image URLs. The genuine website screenshots can include stock/illustrative content. We do not assert that these embedded photos depict the company's actual installation jobs.
 - The production Projects page and catalogue include Test/test entries. Capturing those pages does not validate those records. The Projects capture is evidence of the website UI only.
 - Admin Dashboard, Product Management, Content Management and Company Management captures are BLOCKED by the absence of an authenticated session. No images were invented for them.
+
+## Portfolio release capture
+
+`evidence/acceptance/portfolio-desktop.jpg` — A, real browser capture of deployed Portfolio at https://intasan.github.io/portfolio/#top on 3 November 2026. Confirms the retained Dark Space presentation; the Orb is decorative procedural artwork, not business evidence. SHA-256: f0060d6261bf1762b77ba8d9e5ca89445d2bca8d34a3781010ce9ad38bff77c5

@@ -44,5 +44,12 @@ D=json.loads((R/'projects.json').read_text());next(p for p in D if p['id']=='gol
 (R/'projects.json').write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n');(R/'projects.js').write_text('window.PORTFOLIO_PROJECTS='+json.dumps(D,ensure_ascii=False,indent=2)+';\n')
 s=(R/'index.html').read_text();s=s.replace('src="analysis/yuyenpensuk/diagrams/data-flow.svg" alt="Data flow ของเว็บไซต์และ CMS จัดทำจาก Source Code ไม่ใช่ภาพหน้าจอ"','src="evidence/acceptance/yuyenpensuk/home.jpg" alt="ภาพหน้าแรกเว็บไซต์ Yuyenpensuk จับจาก Browser จริง 3 พฤศจิกายน 2569"',1).replace('SOURCE-DERIVED DOCUMENTATION</span><span>Yuyenpensuk','REAL BROWSER CAPTURE</span><span>Yuyenpensuk',1).replace('projects.js?v=20261103-content','projects.js?v=20261103-acceptance')
 # Preserve Hero completely. Resume downloads live on the existing CV page.
+for item in D:
+ pattern=r'(<a class="project"[^>]*href="case-studies/'+item['id']+r'\.html"[^>]*>)(.*?)(</a>)'
+ def fallback(m):
+  text=re.sub(r'<strong>.*?</strong>','<strong>'+html.escape(item['title'])+'</strong>',m[2])
+  text=re.sub(r'<small>.*?</small>','<small>'+html.escape(item['kind'])+'</small>',text)
+  return m[1]+text+m[3]
+ s=re.sub(pattern,fallback,s)
 (R/'index.html').write_text(s)
 print('Final acceptance content prepared')

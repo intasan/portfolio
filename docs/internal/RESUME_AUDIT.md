@@ -1,6 +1,6 @@
 # Resume audit
 
-3 November 2026. PASS for prepared documents and local file validation; browser download checked in final QA.
+3 November 2026. PASS for prepared documents and local file validation; all three files were downloaded by clicking links on deployed GitHub Pages; PDF headers and SHA-256 matched the repository files.
 
 - Previous CV exposed only HTML print/save and lacked downloadable role-specific files. Added BA, SA and Data Analyst PDFs via the existing CV page, without changing Hero or navigation.
 - Exact English name PANUPONG INTASAN; Thai name ภาณุพงศ์ อินทะแสน on CV page.

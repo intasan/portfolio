@@ -36,3 +36,11 @@ Backup branch: backup/before-final-acceptance-20261103 at 32f78f8cb728556f4fb784
 ## External-link interpretation
 
 The HTTP checker inspected 94 external resources. fonts.googleapis.com and fonts.gstatic.com origin roots returned 404; these are preconnect hints, not user links or requested CSS resources. Yuyenpensuk returned 403 to the HTTP client but opened successfully in Cloud Browser and was captured on six pages. These responses are not reported as broken portfolio navigation. All other checked URLs returned successful responses.
+
+## Deployed acceptance results
+
+Release c2b3aeb2df4b5fe482919074d79dcc797fbf7212: GitHub Pages workflow 41673566380 completed successfully. The deployed site was then tested in Chromium at 360, 390, 768 and 1440 CSS pixels using same-origin iframes: 28 pages, 112 combinations, zero recorded document horizontal-overflow or loaded-image failures. This is browser viewport testing, not physical-device testing.
+
+Production interactions verified: mobile menu; Yuyenpensuk project dialog; real-image gallery and lightbox; close by Escape; MotoInsight search returns the corrected scope; unmatched search shows empty state; BA filter shows 7 projects. No site-origin console errors observed in the inspected tab. Contact links remain mailto/tel/GitHub; no message or call was sent. Three role-specific PDF downloads completed and matched source SHA-256. No audit-report link is present in public navigation.
+
+Evidence: acceptance-browser-qa.json, acceptance-download-qa.json, static-qa.json, external-link-qa.json, acceptance-design-preservation.json. A final publication includes this record plus canonical metadata and no-JavaScript fallback-label corrections; all visual sources remain unchanged.

@@ -1,0 +1,23 @@
+[
+  {
+    "role": "BA",
+    "download_nonempty": true,
+    "pdf_header": true,
+    "matches_repository": true,
+    "sha256": "c5fbd1fe091b7ebbb7b71632174a3feddd740cd8566176f8d0cbe1f998ed700e"
+  },
+  {
+    "role": "SA",
+    "download_nonempty": true,
+    "pdf_header": true,
+    "matches_repository": true,
+    "sha256": "17f1ae99a896cf43a19c9c1d4c381d7f8fe83b925a5cf92dd4c5575aade95423"
+  },
+  {
+    "role": "Data_Analyst",
+    "download_nonempty": true,
+    "pdf_header": true,
+    "matches_repository": true,
+    "sha256": "89f8a958e1a92308b4a4994e4bc5c316d173421515aa0dd43644de61864c6605"
+  }
+]
