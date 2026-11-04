@@ -224,7 +224,7 @@
     ],
     "kind": "Working research prototype · 2026",
     "desc": "Real-data price pipeline, SQL storage and research dashboard with chronological ML evaluation",
-    "role": "Designed and implemented source integration, validation, SQLite storage, API, dashboard and reproducible model evaluation",
+    "role": "Designed and implemented real provider ingestion, validation, SQL storage, Docker / Airflow orchestration, read-only API, dashboard and chronological model evaluation",
     "features": [
       "Real provider ingestion",
       "Transactional UPSERT",
