@@ -228,8 +228,9 @@
     "features": [
       "Real provider ingestion",
       "Transactional UPSERT",
-      "Data provenance",
-      "Monthly price dashboard",
+      "PostgreSQL restart persistence",
+      "Docker / Airflow execution",
+      "Daily recorded-data refresh",
       "Chronological ML evaluation"
     ],
     "flow": [
@@ -242,17 +243,36 @@
     "tech": [
       "Python",
       "Pandas",
+      "PostgreSQL",
       "SQLite",
+      "Docker",
+      "Apache Airflow",
       "scikit-learn",
       "JavaScript",
       "REST API"
     ],
-    "result": "Recorded export: 2,406 real observations. ML evaluated on 36 monthly holdouts; candidate did not beat the naive baseline, so no forecast is published.",
+    "result": "Recorded export, 4 November 2026: 2,412 real observations. Docker, PostgreSQL and Airflow execution verified on GitHub Actions. ML remains not promoted.",
     "repo": "gold-trading",
     "images": [
       {
-        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/dashboard-desktop.jpg",
-        "caption": "Real browser capture of the deployed Gold dashboard, 4 November 2026. Displays a recorded pipeline export, not streaming prices."
+        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/dashboard-overview-current.jpg",
+        "caption": "Real dashboard overview · captured 4 November 2026 · recorded export, not streaming prices"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/dashboard-history-current.jpg",
+        "caption": "Real monthly price history and source lineage · October 2026 monthly data"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/dashboard-model-current.jpg",
+        "caption": "Actual model evaluation · MAE 138.14 vs naive 135.47 · forecast withheld"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/dashboard-pipeline-current.jpg",
+        "caption": "Actual export quality and provider runs · 2,412 observations at capture time"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/runtime-integration-actions.jpg",
+        "caption": "Actual successful Docker / PostgreSQL / Airflow integration on GitHub Actions · isolated test runtime, not an Airflow UI capture"
       }
     ]
   },
