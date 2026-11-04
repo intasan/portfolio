@@ -59,3 +59,16 @@ ML remains NOT PASSED: HGB MAE 138.14 vs naive 135.47; broader 16-configuration 
 Gold gallery now includes five real browser captures: overview, monthly history, model evaluation, pipeline/provenance and the successful GitHub Actions runtime integration. The *-current.jpg images show the 4 November export; the Actions capture is test-run evidence, not an Airflow UI or database GUI capture. External URLs point to the author's own Gold repository. All are Real Evidence of the displayed page, with stated scope; none is an AI screenshot.
 
 Case-study source-derived requirements, data model and architecture links remain available. Hero, theme, navigation, Orb and all animation source were unchanged. Agricultural repository was not modified.
+
+
+## Yuyenpensuk authenticated evidence — 4 November 2026
+
+Replaces the earlier statement that no authenticated CMS captures were available. Real signed-in production navigation, 12 primary menus plus product brands and a product editor, DAIKIN filter (5 visible rows), FTKF search (1) and no-match search (0) were observed. Six genuine admin screenshots are stored in intasan/yuyenpensuk-website at commit d690c5d215d7e159200b83fc686c1f91e8ced35e under evidence/acceptance-20261104.
+
+Gallery uses six existing slots: public home/catalog and four admin views; the case study retains all six older public captures plus all six new admin captures. No evidence was deleted. Images are Real Evidence of the displayed UI; editor screenshots do not establish upload/save success. Admin/account lists, profile/OTP/QR and payment details are excluded from public images. Company homepage CMS capture excludes tax/account fields.
+
+Thirteen public HTTP GETs returned 200; fourteen unauthenticated admin GETs redirected to login; two header-logic unit tests passed. Independent Work image GETs returned 403, so they are not reported as passed image tests or proven site failures. Browser screenshots show rendered UI images.
+
+Backup/restore, CRUD, actual upload, editor enforcement, restart persistence, TOTP login/recovery and owner UAT remain outstanding. VPS TCP/22 is unavailable from Work and the old Hostinger console expired. A private backup tool was prepared and syntax-checked only, not run. No production data mutation, deployment, restart, account or security change was performed. Browser tools later timed out; post-change live Portfolio browser QA could not be completed in this round. Static checks and deployment are recorded separately.
+
+Source-derived requirement traceability and an evidence-bounded Thai interview draft were committed to the Yuyenpensuk repository. They are not an approved BRD or a company sign-off. Dark Space design, hero, navigation and effect source are unchanged.

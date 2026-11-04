@@ -72,6 +72,7 @@
     "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/routes/admin.js",
     "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/routes/site.js",
     "https://github.com/intasan/yuyenpensuk-website/blob/ffecf660f2fdd1a14de3561d817f2276a3c8fee4/tests/security-headers.test.js",
+    "https://github.com/intasan/yuyenpensuk-website/blob/main/docs/acceptance/REQUIREMENT_TRACEABILITY.md",
     "https://github.com/intasan/yuyenpensuk-website/tree/main/docs/analysis",
     "https://github.com/intasan/yuyenpensuk-website/tree/main/docs/analysis/diagrams",
     "https://intasan.github.io/gold-trading/",
@@ -110,6 +111,12 @@
     "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/runtime-integration-actions.jpg",
     "https://raw.githubusercontent.com/intasan/tarot-3d-interactive/main/evidence/card-selected-actual.jpg",
     "https://raw.githubusercontent.com/intasan/thai-gold-price-forecast/main/evidence/dashboard-actual.jpg",
+    "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-company-cms.jpg",
+    "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-dashboard.jpg",
+    "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-news.jpg",
+    "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-product-images.jpg",
+    "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-products.jpg",
+    "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-services.jpg",
     "https://yuyenpensuk.com/"
   ],
   "scope": "Static HTML links, fragments, alt text, duplicate IDs, metadata and homepage audit exclusion. No external HTTP or browser assertions in this check."

@@ -35,27 +35,27 @@
     "images": [
       {
         "src": "evidence/acceptance/yuyenpensuk/home.jpg",
-        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าแรก / Public homepage · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: Public homepage · ภาพการแสดงผลหน้าที่เปิดตรวจ"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-dashboard.jpg",
+        "caption": "ภาพ Production หลัง Login จริง 4 พ.ย. 2569: Admin Dashboard · ตรวจการแสดงผล ไม่ใช่ผลผ่าน CRUD/UAT"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-products.jpg",
+        "caption": "ภาพจริง 4 พ.ย. 2569: Product Management · รายการสินค้าและตัวกรอง"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-company-cms.jpg",
+        "caption": "ภาพจริง 4 พ.ย. 2569: Company Homepage CMS · เปิดดูแบบอ่านอย่างเดียว"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/intasan/yuyenpensuk-website/d690c5d215d7e159200b83fc686c1f91e8ced35e/evidence/acceptance-20261104/admin-product-images.jpg",
+        "caption": "ภาพจริง 4 พ.ย. 2569: ส่วนรูปภาพใน Product Editor · ยังไม่ได้ทดสอบอัปโหลดหรือกดบันทึก"
       },
       {
         "src": "evidence/acceptance/yuyenpensuk/products.jpg",
-        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้ารวมสินค้า / Product catalog · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
-      },
-      {
-        "src": "evidence/acceptance/yuyenpensuk/product-detail.jpg",
-        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: รายละเอียดสินค้า / Product detail · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
-      },
-      {
-        "src": "evidence/acceptance/yuyenpensuk/services.jpg",
-        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าบริการ / Services · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
-      },
-      {
-        "src": "evidence/acceptance/yuyenpensuk/projects.jpg",
-        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าผลงาน / Company projects · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
-      },
-      {
-        "src": "evidence/acceptance/yuyenpensuk/admin-login.jpg",
-        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: หน้าเข้าสู่ระบบ / Admin login · ยืนยันการแสดงผลหน้าเว็บ ไม่รับรองข้อมูลธุรกิจในภาพ"
+        "caption": "ภาพ Browser จริง 3 พ.ย. 2569: Product catalog · ภาพการแสดงผลหน้าที่เปิดตรวจ"
       }
     ],
     "analysis": {

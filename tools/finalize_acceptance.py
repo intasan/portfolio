@@ -57,3 +57,6 @@ print('Final acceptance content prepared')
 # Apply the verified Gold implementation after historical acceptance transforms.
 import runpy
 runpy.run_path(str(R/'tools/update_gold_implementation.py'),run_name='__main__')
+
+# Preserve verified authenticated Yuyenpensuk evidence after baseline generation.
+runpy.run_path(str(R/'tools/update_yuyen_acceptance.py'),run_name='__main__')
