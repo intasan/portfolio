@@ -64,3 +64,7 @@ s=original('ppe-case-study.html').replace('index.html#project=ppe','case-studies
 if 'name="description"' not in s:s=s.replace('<title>','<meta name="description" content="BA assessment: PPE inspection requirements, acceptance criteria and UAT planning"><title>',1)
 (R/'ppe-case-study.html').write_text(s)
 print('Updated content within existing cosmic design')
+
+# Apply the verified Gold implementation after historical acceptance transforms.
+import runpy
+runpy.run_path(str(R/'tools/update_gold_implementation.py'),run_name='__main__')

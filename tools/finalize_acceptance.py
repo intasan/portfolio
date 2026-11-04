@@ -53,3 +53,7 @@ for item in D:
  s=re.sub(pattern,fallback,s)
 (R/'index.html').write_text(s)
 print('Final acceptance content prepared')
+
+# Apply the verified Gold implementation after historical acceptance transforms.
+import runpy
+runpy.run_path(str(R/'tools/update_gold_implementation.py'),run_name='__main__')

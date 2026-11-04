@@ -222,25 +222,39 @@
       "da",
       "sa"
     ],
-    "kind": "Concept / In Progress · 2026",
-    "desc": "แนวคิดระบบรวบรวมและวิเคราะห์ราคาทองคำ ปัจจุบันมีเอกสารและหน้าแนะนำโครงการ",
-    "role": "จัดทำกรอบแนวคิดและหน้าอธิบายโครงการด้านการรวบรวมและวิเคราะห์ราคาทองคำ",
+    "kind": "Working research prototype · 2026",
+    "desc": "Real-data price pipeline, SQL storage and research dashboard with chronological ML evaluation",
+    "role": "Designed and implemented source integration, validation, SQLite storage, API, dashboard and reproducible model evaluation",
     "features": [
-      "Project concept",
-      "Data integration scope"
+      "Real provider ingestion",
+      "Transactional UPSERT",
+      "Data provenance",
+      "Monthly price dashboard",
+      "Chronological ML evaluation"
     ],
     "flow": [
-      "กำหนดโจทย์ข้อมูล",
-      "วางกรอบการรวบรวม",
-      "วางแนวทางวิเคราะห์"
+      "Extract provider responses",
+      "Validate units and timestamps",
+      "UPSERT validated observations",
+      "Evaluate monthly model",
+      "Export dashboard data"
     ],
     "tech": [
-      "HTML",
-      "Markdown"
+      "Python",
+      "Pandas",
+      "SQLite",
+      "scikit-learn",
+      "JavaScript",
+      "REST API"
     ],
-    "result": "เอกสารแนวคิดและหน้าแนะนำโครงการ ยังไม่มี ETL, Airflow DAG, PostgreSQL, ML หรือ Dashboard ที่รันได้ใน Repository ปัจจุบัน",
+    "result": "Recorded export: 2,406 real observations. ML evaluated on 36 monthly holdouts; candidate did not beat the naive baseline, so no forecast is published.",
     "repo": "gold-trading",
-    "images": []
+    "images": [
+      {
+        "src": "https://raw.githubusercontent.com/intasan/gold-trading/main/evidence/dashboard-desktop.jpg",
+        "caption": "Real browser capture of the deployed Gold dashboard, 4 November 2026. Displays a recorded pipeline export, not streaming prices."
+      }
+    ]
   },
   {
     "id": "flood",
